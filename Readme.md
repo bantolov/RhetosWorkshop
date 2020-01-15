@@ -6,33 +6,37 @@ TODO: Some topics currently have incomplete documentation (see TODO tags in othe
 
 *(3 hours)*
 
-* Prerequisites for day 1 *(assignment)*
-* What is Rhetos *(theory)*
-* What is available on GitHub *(theory)*
-* Development environment setup and the first application
-* Rhetos DSL syntax
-  * Declarative programming *(theory)*
-* Data model and relationships
-* Prerequisites for day 2 *(assignment)*
+1. Prerequisites for day 1 *(assignment)*
+2. What is Rhetos *(theory)*
+3. What is available on GitHub *(theory)*
+4. Development environment setup and the first application
+5. Rhetos DSL syntax
+   * Declarative programming *(theory)*
+6. Data model and relationships
+7. Prerequisites for day 2 *(assignment)*
+
+Comprehension review:
+
+* What is Rhetos / Developing generated application without Rhetos
 
 ## [Day 2](Day2/day2.md)
 
 *(3 hours)*
 
-* Simple business rules
-* Read-only data structures
-* Simple read-only entities and code tables *(new)*
-* Domain Object Model
-  * Understanding the generated object model *(theory)*
+1. Simple business rules
+2. Read-only data structures
+3. Simple read-only entities and code tables *(new)*
+4. Domain Object Model
+   * Understanding the generated object model *(theory)*
 
 ## [Day 3](Day3/day3.md)
 
-*(2 hours, Authentication and authorization could be moved from day 4 to day 3 to reduce day 4)*
+*(2 hours, Authentication and Authorization could be moved from day 4 to day 3 to reduce day 4)*
 
-* Filters
-* Validations
-* REST Web API
-* Low-level database concepts
+1. Filters
+2. Validations
+3. REST Web API
+4. Low-level database concepts
 
 Comprehension review:
 
@@ -47,40 +51,40 @@ Comprehension review:
 
 *(3 hours)*
 
-* Low-level object model concepts
-  * When to use them and when to avoid *(theory)*
-* Extending DSL - Develop a code generator *(incomplete documentation)*
-* Extending DSL - Develop a macro concept *(incomplete documentation)*
-* User authentication *(theory)*
-* Authorization - Basic permissions *(theory)*
-* Authorization - Row permissions *(theory)*
+1. Low-level object model concepts
+   * When to use them *(theory)*
+2. Extending DSL - Develop a code generator *(incomplete documentation)*
+3. Extending DSL - Develop a macro concept *(incomplete documentation)*
+4. User authentication *(theory)*
+5. Authorization - Basic permissions *(theory)*
+6. Authorization - Row permissions *(theory)*
 
 ## [Day 5](Day5/day5.md)
 
 *(3 hours)*
 
-* Entity inheritance *(theory)*
-* Event sourcing *(theory)*
-* Business process modeling *(theory, incomplete documentation)*
-* Computations, persisting computed data *(theory, incomplete documentation)*
+1. Entity inheritance *(theory)*
+2. Event sourcing *(theory)*
+3. Business process modeling *(theory, incomplete documentation)*
+4. Computations, persisting computed data *(theory, incomplete documentation)*
 
 ## [Day 6](Day6/day6.md)
 
 *(3 hours)*
 
-* Migrating the application data when changing the database structure
-  * Database structure independence *(theory)*
-* Debugging
-* System Logging - NLog
-* Deploying Rhetos applications *(incomplete documentation)*
+1. Migrating the application data when changing the database structure
+   * Database structure independence *(theory)*
+2. Debugging
+3. System Logging - NLog
+4. Deploying Rhetos applications *(incomplete documentation)*
 
 ## [Day 7](Day7/day7.md)
 
 *(2 hours)*
 
-* Unit testing
-* Implementing business logic in a separate library *(theory)*
-* Temporal data and change history *(theory)*
-* Reporting - TemplaterReport *(theory)*
-* Full-text search *(theory)*
-* Rhetos on GitHub *(theory)*
+1. Unit testing
+2. Implementing business logic in a separate library *(theory)*
+3. Temporal data and change history *(theory)*
+4. Reporting - TemplaterReport *(theory)*
+5. Full-text search *(theory)*
+6. Rhetos on GitHub *(theory)*
