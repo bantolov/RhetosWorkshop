@@ -1,0 +1,23 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "md",
+        "markdown",
+        "plaintext"
+    ],
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "markdownlint.config": {
+        "MD031": { "list_items": false }
+    },
+    "markdown.extension.italic.indicator": "*",
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.levels": "2..3",
+    "markdown.extension.toc.orderedList": true,
+    "markdown.extension.toc.downcaseLink": true
+}

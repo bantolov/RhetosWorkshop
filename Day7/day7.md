@@ -1,0 +1,145 @@
+# Day 7
+
+Topics:
+
+1. [Unit testing](#unit-testing)
+2. [Implementing business logic in a separate library](#implementing-business-logic-in-a-separate-library)
+3. [Temporal data and change history](#temporal-data-and-change-history)
+4. [Reporting - TemplaterReport](#reporting---templaterreport)
+5. [Full-text search](#full-text-search)
+6. [Rhetos on GitHub](#rhetos-on-github)
+
+## Unit testing
+
+Principles and techniques for developing unit tests on Rhetos applications
+with Visual Studio Unit Testing Framework.
+
+Documentation:
+
+* Bookstore demo application
+  * Overview of unit tests
+    <https://github.com/Rhetos/Bookstore/blob/master/Readme.md#unit-testing>
+  * Integration testing project
+    [test/Bookstore.ServerDom.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.ServerDom.Test)
+* TODO: Walkthrough
+
+Contents:
+
+* Introduction
+  * Strictly speaking, we will developer *integration tests*, not pure unit tests,
+    on VS unit testing framework.
+  * We will use same technology as "playground" console application from
+    [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
+  * **Demonstrate** adding a new unit testing projects in Bookstore application.
+    See [test/Bookstore.ServerDom.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.ServerDom.Test)
+    for code structure and references.
+  * **Demonstrate** writing a simple unit test: add a book and two comments,
+    expect the cache entity value BookInfo.NumberOfComments to be 2.
+* RhetosTestContainer
+  * Develop a derived class with project-specific helpers,
+    e.g. [BookstoreRhetos](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.ServerDom.Test/Tools/BookstoreRhetos.cs).
+  * Single instance represents a single web request and one database transaction.
+* Rhetos.TestCommon.TestUtility class best practices
+  * Use TestUtility.Dump and TestUtility.DumpSorted to format your expected result,
+    and compare expected report vs. actual report.
+    This will result with more concise code and more informative error message,
+    especially for lists (the alternative is to make separate asserts for count and for each element values).
+  * Use TestUtility.ShouldFail with exception type instead of ExpectedExceptionAttribute.
+    It provide a better control over the error analysis
+    (multiple substrings in error messages or manual exception analysis)
+    and better control over execution flow
+    (for example, the attribute could report false positive if the correct exception
+    was thrown, but on the wrong line in test).
+* Principles for writing maintainable unit tests (independence)
+  * Test should prepare its own test data.
+    It should be able to run on empty database, after deploying the application
+    (it will include data created by data-migration scripts and similar features).
+  * Test should not be affected by the existing data in database.
+    It should be able to run on an existing database from the shared test environment.
+  * Test should not change the existing data or leave new data in the database
+    (rollback by default, or custom cleanup in specific circumstances).
+* Testing user permissions
+  * IUserInfo mock
+  * Directly execute filters for read and write row permissions
+  * Testing server commands with ProcessingEngine may help with testing end-user experience,
+    because it includes both basic permissions (claims) and row permissions.
+    It is usually better to directly test row permissions filters, because that
+    provides a smaller scope for what is tested.
+
+## Implementing business logic in a separate library
+
+Documentation:
+
+* Chapter "Using external code when developing actions" in article
+  [Action concept](https://github.com/Rhetos/Rhetos/wiki/Action-concept#Using-external-code-when-developing-actions).
+
+Contents:
+
+* This will become simpler after integration with Visual Studio
+  (see [Roadmap](https://github.com/Rhetos/Rhetos/wiki/Rhetos-platform-roadmap)).
+  Custom written C# code will be built together with the generated code,
+  eliminating the circular reference issues.
+
+## Temporal data and change history
+
+Documentation:
+
+* <https://github.com/Rhetos/Rhetos/wiki/Temporal-data-and-change-history>
+
+## Reporting - TemplaterReport
+
+Documentation:
+
+* <https://github.com/Rhetos/Rhetos/wiki/TemplaterReport>
+  * TODO: Incomplete article.
+  * TODO: This package is not published on GitHub yet, it requires a paid license.
+* Basic concepts: ReportData and ReportFile
+  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConceptsTest/DslScripts/Computations.rhe)
+
+## Full-text search
+
+Documentation:
+
+* [SqlObject](https://github.com/Rhetos/Rhetos/wiki/SqlObject-concept),
+  for creating full-text search catalog and index
+  * Example in unit test
+    [FullTextSearchTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConceptsTest/DslScripts/FullTextSearchTest.rhe)
+  * FTS objects cannot be created in a database transaction.
+* Rhetos contains EF LINQ extension methods for FullTextSearch
+  * See [DatabaseExtensionFunctions.cs](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts.Interfaces/DatabaseExtensionFunctions.cs)
+  * Alternative integer key instead of GUID ID.
+  * Limiting the search subquery results with top_n_by_rank.
+* TODO: Tutorial
+
+Contents:
+
+* Short overview of two Rhetos features that can be used to implement FTS:
+  * SqlObject without transaction
+  * Extension methods for Entity Framework LINQ (implemented in CommonConcepts package),
+    allow using FTS in LINQ queries (for example in ComposableFilterBy).
+
+## Rhetos on GitHub
+
+Documentation:
+
+* Rhetos plugins
+  * [Recommended plugins](https://github.com/Rhetos/Rhetos/wiki#recommended-plugins)
+  * Most application development projects have some additional custom concepts
+    developed.
+* Rhetos documentation
+  * [Tutorials and samples](https://github.com/Rhetos/Rhetos/wiki#application-development-with-rhetos)
+  * [List of DSL concepts in CommonConcepts](https://github.com/Rhetos/Rhetos/wiki/List-of-DSL-concepts-in-CommonConcepts)
+    * TODO: The list is incomplete.
+* Support
+  * Questions and Issues: [GitHub issues](https://github.com/Rhetos/Rhetos/issues?q=is%3Aissue)
+* Rhetos framework development
+  * <https://github.com/Rhetos/Rhetos/wiki/Release-management>
+    * [Short-term: Milestones](https://github.com/Rhetos/Rhetos/milestones?direction=asc&sort=title&state=open)
+    * [Long-term: Roadmap](https://github.com/Rhetos/Rhetos/wiki/Rhetos-platform-roadmap)
+    * [Previous: Release notes](https://github.com/Rhetos/Rhetos/blob/master/ChangeLog.md)
+  * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-coding-standard>
+  * <https://github.com/Rhetos/Rhetos/wiki/How-to-Contribute>
+
+Assignment:
+
+* Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-coding-standard>

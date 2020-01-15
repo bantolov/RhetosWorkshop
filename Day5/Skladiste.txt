@@ -1,0 +1,57 @@
+SqlView TrenutnoStanjeSkladista
+    "SELECT Artikl, Skladiste, SUM(Kolicina)
+    FROM PromjenaNaSkladistu
+    GROUP BY Artikl, Skladiste"
+{
+    Reference Artikl;
+    Reference Skladiste;
+    Integer TrenutnaKolicina;
+}
+
+Polymorphic PromjenaNaSkladistu
+{
+    Artikl;
+    Skladiste;
+    Kolicina;
+}
+
+Entity ZaprimanjeRobe
+{
+    Artikl;
+    Skladiste;
+    Kolicina;
+
+    Is PromjenaNaSkladistu;
+}
+
+Entity IzlazRobe
+{
+    Artikl;
+    Skladiste;
+    Kolicina;
+
+    Is PromjenaNaSkladistu
+    {
+        Implements Kolicina = -Kolicina;
+    }
+}
+    
+Entity PremjestajRobe
+{
+    Artikl;
+    SkladisteSa;
+    SkladisteNa;
+    Kolicina;
+
+    Is PromjenaNaSkladistu 'Uklanjanje'
+    {
+        Implements Skladiste SkladisteSa
+        Implements Kolicina = -Kolicina;
+    }
+
+    Is PromjenaNaSkladistu
+    {
+        Implements Skladiste SkladisteNa
+        Implements Kolicina = Kolicina;
+    }
+}
