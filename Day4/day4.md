@@ -47,7 +47,7 @@ Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package> -
   Instructions how to add a .nuspec file to your application,
-  in order to include your dll with the new concept.
+  in order to include your DLL with the new concept.
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of code generator concept *DeactivateOnDelete*,
@@ -57,9 +57,9 @@ Contents:
 
 * Review the existing CommonConcepts concept definition classes: ModuleInfo,
   EntityInfo (DataStructureInfo) and CreationTimeInfo.
-* Creating a new dll project for custom concepts as a part of your application.
-  * **Demonstrate** adding a new Visual Studio project for dll with custom concepts.
-  * **Demonstrate** adding a NuGet specification file (nuspec) to include this new dll
+* Creating a new class library project (a new DLL) for custom concepts as a part of your application.
+  * **Demonstrate** adding a new Visual Studio project for DLL with custom concepts.
+  * **Demonstrate** adding a NuGet specification file (nuspec) to include this new DLL
     to the BookstoreRhetosServer.
     Previously in this workshop we have used only naming convention for DSL scripts
     (the DslScripts subfolder), without a formal package content specification.
