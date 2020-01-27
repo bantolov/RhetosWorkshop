@@ -8,7 +8,7 @@ Topics:
 4. [Development environment setup and the first application](#development-environment-setup-and-the-first-application)
 5. [Rhetos DSL syntax](#rhetos-dsl-syntax)
 6. [Data model and relationships](#data-model-and-relationships)
-7. [Prerequisites for day 2](#prerequisites-for-day-2)
+7. [From LINQ to SQL](#from-linq-to-sql)
 
 ## Prerequisites for day 1
 
@@ -178,18 +178,20 @@ Assignment notes and common issues:
 * Use the `Extends` keyword to implement a 1:1 relationship.
   The extended entity should contain the optional additional data for the base entity.
 
-## Prerequisites for day 2
+## From LINQ to SQL
+
+This topic is not directly related to Rhetos.
+Basic understanding of LINQ queries is a prerequisite for further workshop topics.
 
 Assignment:
 
 1. Learn the basic LINQ methods: Select() and Where().
 2. Understand why the following 3 different LINQ query commands results
    with 3 different SQL queries generated: ![linq.png](linq.png)
+   * Note: This image is a screenshot from LINQPad (a free C# utility),
+     but you don’t need to install it or use it.
+     This task is focused on the snippet of C# code that is visible
+     in the screenshot, and the way that Entity Framework (or LINQ2SQL)
+     would interpret the LINQ queries when generating the SQL queries.
 3. (optional) Advanced: Understand why the last commented line
    in the example above causes a compiler error.
-
-Note that the attached image is a screenshot from LINQPad (a free C# utility),
-but you don’t need to install it or use it.
-The task is just related to the snippet of C# code that is visible
-in this screenshot, and the way the Entity Framework (or LINQ2SQL)
-would interpret the LINQ queries when generating the SQL queries.

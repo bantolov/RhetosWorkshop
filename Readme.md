@@ -13,7 +13,7 @@ TODO: Some topics currently have incomplete documentation (see TODO tags in othe
 5. Rhetos DSL syntax
    * Declarative programming *(theory)*
 6. Data model and relationships
-7. Prerequisites for day 2 *(assignment)*
+7. From LINQ to SQL *(assignment)*
 
 Comprehension review:
 
