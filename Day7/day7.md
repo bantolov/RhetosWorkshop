@@ -26,7 +26,7 @@ Documentation:
 Contents:
 
 * Introduction
-  * Strictly speaking, we will developer *integration tests*, not pure unit tests,
+  * Strictly speaking, we will develop *integration tests*, not pure unit tests,
     on VS unit testing framework.
   * We will use same technology as "playground" console application from
     [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
