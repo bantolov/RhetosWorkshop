@@ -110,8 +110,8 @@ Documentation:
   See Shipment.rhe, ShipmentEvents.rhe and ShipmentState.rhe
   in <https://github.com/Rhetos/Bookstore/tree/master/src/DslScripts>.
 * TODO: Bookstore: An example of a business process with aggregated quantities is currently missing:
-  * WarehouseState process in module Warehouse1 - same implementation as Shipment process
-  * WarehouseState process in module Warehouse2 - optimized implementation in C#
+  * WarehouseState process in module Warehousing1 - same implementation as Shipment process
+  * WarehouseState process in module Warehousing2 - optimized implementation in C#
     instead of database view with cached state for each event (not just the current state).
 
 Contents:
