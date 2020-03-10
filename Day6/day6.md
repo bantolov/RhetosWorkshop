@@ -121,7 +121,7 @@ Documentation:
 
 * Bookstore build script example <https://github.com/Rhetos/Bookstore/blob/master/Build.ps1>
 * Command-line switches (`DeployPackages.exe /?`)
-* TODO: Tutorial
+* TODO: Tutorial on "Deploying Rhetos applications" (issue #313)
 
 Contents:
 

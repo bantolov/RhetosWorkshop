@@ -104,12 +104,12 @@ Best practices for implementing business processes in Rhetos applications.
 
 Documentation:
 
-* TODO: Tutorial: Implementing business processes, with 2 typical examples:
+* TODO: Business process modeling tutorial (issue #311) on implementing business processes, with 2 typical examples:
   updating latest status and accumulating amounts.
 * An example of a business process with statuses:
   See Shipment.rhe, ShipmentEvents.rhe and ShipmentState.rhe
   in <https://github.com/Rhetos/Bookstore/tree/master/src/DslScripts>.
-* TODO: Bookstore: An example of a business process with aggregated quantities is currently missing:
+* TODO: Implement an example of a business process with aggregated quantities in Bookstore (issue #289)
   * WarehouseState process in module Warehousing1 - same implementation as Shipment process
   * WarehouseState process in module Warehousing2 - optimized implementation in C#
     instead of database view with cached state for each event (not just the current state).
@@ -142,7 +142,7 @@ Contents:
   * Aggregation of amounts is often additionally optimized to avoid scanning all records in one
     group when updating state (ChangesOnChangedItems with custom FilterBy).
   * Review an example of process that aggregate amounts:
-    * [Skladiste.txt](Skladiste.txt). TODO: Implement WarehouseState process in Bookstore demo application.
+    * [Skladiste.txt](Skladiste.txt). TODO: Implement WarehouseState process in Bookstore demo application (issue #289)
 
 Assignment:
 
@@ -156,9 +156,8 @@ Switching between on-the-fly computations and automated caching.
 Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Persisting-the-computed-data>
-  * TODO: This article is missing the central part: detailed explanation of ComputedFrom,
-    KeyProperties and ChangesOn concepts on an example from Bookstore.
-    Recompute method on generated object model.
+  * TODO: Detailed explanation of ComputedFrom, KeyProperties and ChangesOn concepts (issue #312),
+    with examples from Bookstore and how to manually execute Recompute method on generated object model.
 * Examples are available in <https://github.com/Rhetos/Bookstore/blob/master/src/DslScripts>
   * ShipmentState.rhe
   * BookInfo.rhe (a similar example)

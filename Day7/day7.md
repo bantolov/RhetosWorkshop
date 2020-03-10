@@ -5,9 +5,10 @@ Topics:
 1. [Unit testing](#unit-testing)
 2. [Implementing business logic in a separate library](#implementing-business-logic-in-a-separate-library)
 3. [Temporal data and change history](#temporal-data-and-change-history)
-4. [Reporting - TemplaterReport](#reporting---templaterreport)
+4. [Reporting](#reporting)
 5. [Full-text search](#full-text-search)
-6. [Rhetos on GitHub](#rhetos-on-github)
+6. [Internationalization and labels](#internationalization-and-labels)
+7. [Rhetos on GitHub](#rhetos-on-github)
 
 ## Unit testing
 
@@ -21,7 +22,7 @@ Documentation:
     <https://github.com/Rhetos/Bookstore/blob/master/Readme.md#unit-testing>
   * Integration testing project
     [test/Bookstore.ServerDom.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.ServerDom.Test)
-* TODO: Walkthrough
+* TODO: "Unit testing" walkthrough (issue #314)
 
 Contents:
 
@@ -86,15 +87,14 @@ Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Temporal-data-and-change-history>
 
-## Reporting - TemplaterReport
+## Reporting
 
 Documentation:
 
-* <https://github.com/Rhetos/Rhetos/wiki/TemplaterReport>
-  * TODO: Incomplete article.
-  * TODO: This package is not published on GitHub yet, it requires a paid license.
+* TODO: Overview of reporting approaches on Rhetos applications (issue #315)
 * Basic concepts: ReportData and ReportFile
   * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConceptsTest/DslScripts/Computations.rhe)
+* TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.
 
 ## Full-text search
 
@@ -109,7 +109,7 @@ Documentation:
   * See [DatabaseExtensionFunctions.cs](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts.Interfaces/DatabaseExtensionFunctions.cs)
   * Alternative integer key instead of GUID ID.
   * Limiting the search subquery results with top_n_by_rank.
-* TODO: Tutorial
+* TODO: "Full-text search" tutorial (issue #316)
 
 Contents:
 
@@ -117,6 +117,17 @@ Contents:
   * SqlObject without transaction
   * Extension methods for Entity Framework LINQ (implemented in CommonConcepts package),
     allow using FTS in LINQ queries (for example in ComposableFilterBy).
+
+## Internationalization and labels
+
+Two available plugins:
+
+* [Rhetos.I18NFormatter](https://github.com/Rhetos/I18NFormatter/blob/master/Readme.md) -
+  Support for generic ASP.NET module, [i18n](https://github.com/turquoiseowl/i18n),
+  that works with [GetText / PO](http://en.wikipedia.org/wiki/Gettext) language files.
+  I18N localization module can be placed directly on Rhetos application or on a proxy/gateway web application.
+* [Rhetos.MvcModelGenerator](https://github.com/Rhetos/MvcModelGenerator) -
+  Support for front-end localization with MVC metadata attributed and captions in *resx* files.
 
 ## Rhetos on GitHub
 
@@ -129,7 +140,6 @@ Documentation:
 * Rhetos documentation
   * [Tutorials and samples](https://github.com/Rhetos/Rhetos/wiki#application-development-with-rhetos)
   * [List of DSL concepts in CommonConcepts](https://github.com/Rhetos/Rhetos/wiki/List-of-DSL-concepts-in-CommonConcepts)
-    * TODO: The list is incomplete.
 * Support
   * Questions and Issues: [GitHub issues](https://github.com/Rhetos/Rhetos/issues?q=is%3Aissue)
 * Rhetos framework development

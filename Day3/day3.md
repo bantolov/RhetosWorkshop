@@ -136,7 +136,7 @@ Contents:
     and full-text search index (cannot be created inside a transaction).
 * Dependencies between database objects
 
-TODO: LegacyEntity concept documentation.
+TODO: LegacyEntity tutorial with examples (issue #309)
 
 Assignments:
 

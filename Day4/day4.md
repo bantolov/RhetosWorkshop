@@ -73,7 +73,7 @@ Contents:
   and new custom generated files could be added (for example, a generated TypeScript classes for all entities).
 * Testing & debugging
 
-TODO: Documentation for "other code generators", at least an overview of available plugin interfaces.
+TODO: Overview of additional code generator plugin types (issue #310)
 
 Assignment:
 
@@ -91,9 +91,6 @@ Documentation:
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of macro concept *PhoneNumber*,
   in [src\Bookstore.Concepts](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Concepts).
-
-TODO: Implement Codebook and LastModificationTime concepts in Bookstore,
-and link them as an example above.
 
 Contents:
 
