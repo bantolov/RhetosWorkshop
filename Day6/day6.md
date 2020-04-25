@@ -131,8 +131,8 @@ Contents:
     Don't use shared web application for development.
   * Review [Bookstore Build.ps1](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1).
 * Initial deployment on **test/production environment**
-  * Copy the  web application (folder `dist\BookstoreRhetosServer`) to the server.
-  * Create an empty database.
+  * Copy the web application (folder `dist\BookstoreRhetosServer`) to the server.
+  * Create an empty database and configure connection string.
   * Setup IIS and .config files.
   * Run `DeployPackages /DatabaseOnly` to upgrade the database (this will skip the steps that
     download NuGet packages and generate the application binaries).
