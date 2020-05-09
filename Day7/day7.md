@@ -36,10 +36,15 @@ Contents:
     for code structure and references.
   * **Demonstrate** writing a simple unit test: add a book and two comments,
     expect the cache entity value BookInfo.NumberOfComments to be 2.
-* RhetosTestContainer
-  * Develop a derived class with project-specific helpers,
-    e.g. [BookstoreRhetos](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.ServerDom.Test/Tools/BookstoreRhetos.cs).
-  * Single instance represents a single web request and one database transaction.
+* Rhetos.ProcessContainer (a successor to RhetosTestContainer)
+  * Unit tests should reuse a single static instance of `ProcessContainer`, to avoid running
+    initialization code for each test (Entity Framework startup and plugin discovery).
+  * **Develop** a helper class that initializes `ProcessContainer`
+    (for example [BookstoreContainer](https://github.com/Rhetos/Bookstore/blob/ad7a1dddb99c266cb12a1a7d496bc8129464dc76/test/Bookstore.Service.Test/Tools/BookstoreContainer.cs))
+    and use it in unit tests
+    (see Bookstore [tests](https://github.com/Rhetos/Bookstore/blob/ad7a1dddb99c266cb12a1a7d496bc8129464dc76/test/Bookstore.Service.Test/BookTest.cs)).
+  * Each TransactionScopeContainer instance represents a separate atomic database transaction
+    (similar to a single web request).
 * Rhetos.TestCommon.TestUtility class best practices
   * Use TestUtility.Dump and TestUtility.DumpSorted to format your expected result,
     and compare expected report vs. actual report.
