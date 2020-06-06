@@ -21,7 +21,7 @@ Documentation:
   * Overview of unit tests
     <https://github.com/Rhetos/Bookstore/blob/master/Readme.md#unit-testing>
   * Integration testing project
-    [test/Bookstore.ServerDom.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.ServerDom.Test)
+    [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
 * TODO: "Unit testing" walkthrough (issue #314)
 
 Contents:
@@ -32,7 +32,7 @@ Contents:
   * We will use same technology as "playground" console application from
     [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
   * **Demonstrate** adding a new unit testing projects in Bookstore application.
-    See [test/Bookstore.ServerDom.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.ServerDom.Test)
+    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
     for code structure and references.
   * **Demonstrate** writing a simple unit test: add a book and two comments,
     expect the cache entity value BookInfo.NumberOfComments to be 2.

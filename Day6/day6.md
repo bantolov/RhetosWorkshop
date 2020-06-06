@@ -164,5 +164,5 @@ Contents:
 
 Assignment:
 
-* Publish your BookstoreRhetosServer application on a test environment,
+* Publish your Bookstore.Service application on a test environment,
   on a new empty database.

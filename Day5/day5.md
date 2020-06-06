@@ -16,7 +16,7 @@ such as entity inheritance or events in business process model.
 Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Polymorphic-concept>
-* Example with comments: <https://github.com/Rhetos/Bookstore/blob/master/src/DslScripts/SalesItem.rhe>
+* Example with comments: <https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/SalesItem.rhe>
 
 Contents:
 
@@ -108,7 +108,7 @@ Documentation:
   updating latest status and accumulating amounts.
 * An example of a business process with statuses:
   See Shipment.rhe, ShipmentEvents.rhe and ShipmentState.rhe
-  in <https://github.com/Rhetos/Bookstore/tree/master/src/DslScripts>.
+  in <https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Service/DslScripts>.
 * TODO: Implement an example of a business process with aggregated quantities in Bookstore (issue #289)
   * WarehouseState process in module Warehousing1 - same implementation as Shipment process
   * WarehouseState process in module Warehousing2 - optimized implementation in C#
@@ -158,12 +158,12 @@ Documentation:
 * <https://github.com/Rhetos/Rhetos/wiki/Persisting-the-computed-data>
   * TODO: Detailed explanation of ComputedFrom, KeyProperties and ChangesOn concepts (issue #312),
     with examples from Bookstore and how to manually execute Recompute method on generated object model.
-* Examples are available in <https://github.com/Rhetos/Bookstore/blob/master/src/DslScripts>
+* Examples are available in <https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts>
   * ShipmentState.rhe
   * BookInfo.rhe (a similar example)
   * BookRating.rhe (data source is not a view, but an external C# algorithm).
 * You can also find a short explanation of how the ChangesOnChangedItems works in LINQPad script
-  <https://github.com/Rhetos/Bookstore/blob/master/dist/BookstoreRhetosServer/LinqPad/Shipment%20state.linq>
+  <https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/LinqPad/Shipment%20state.linq>
 
 Contents:
 

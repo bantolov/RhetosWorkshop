@@ -90,13 +90,15 @@ Contents:
 
 ## Domain Object Model
 
-The Domain Object Model (DOM) is a set of C# classes that implement the application's business logic
-and control the application's data.
-Rhetos generates the object model from the application's DSL model (from the .rhe scripts)
-and compiles it to ServerDom DLLs.
+The **Domain Object Model** (DOM) is a set of C# classes that implement
+the application's business logic and control the application's data.
 
-This article helps developers to understand the generated classes and methods,
-because we can use them to implement new business features,
+When building the application, Rhetos generates the object model in the additional C# files,
+based on the application's DSL model (from the *.rhe* scripts).
+These additional files are automatically compiled as part of the application.
+
+Application developers need to understand the generated classes and methods,
+because they will be used in C# code snippets when implementing new business features,
 such as filters, validations, computations and server actions.
 
 Prerequisites:
@@ -126,7 +128,7 @@ Documentation:
 Contents:
 
 * Understanding the generated object model
-  * Review the generated C# application source code in ServerDom.*.cs
+  * Review the generated C# application source code in `obj\Rhetos\RhetosSource`.
   * Simple class (POCO).
   * Queryable class (inherits simple, adds navigation properties for EF LINQ).
   * Repository class with methods that implement business rules and data access.

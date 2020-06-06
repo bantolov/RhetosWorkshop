@@ -45,24 +45,22 @@ in user requirements or integration with new technologies.
 
 Documentation:
 
-* <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package> -
-  Instructions how to add a .nuspec file to your application,
-  in order to include your DLL with the new concept.
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of code generator concept *DeactivateOnDelete*,
   in project [src\Bookstore.Concepts](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Concepts).
+* <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>.
 
 Contents:
 
-* Review the existing CommonConcepts concept definition classes: ModuleInfo,
-  EntityInfo (DataStructureInfo) and CreationTimeInfo.
+* In Rhetos framework source code, review the existing CommonConcepts concept definition classes:
+  ModuleInfo, EntityInfo (DataStructureInfo) and CreationTimeInfo.
 * Creating a new class library project (a new DLL) for custom concepts as a part of your application.
   * **Demonstrate** adding a new Visual Studio project for DLL with custom concepts.
-  * **Demonstrate** adding a NuGet specification file (nuspec) to include this new DLL
-    to the BookstoreRhetosServer.
-    Previously in this workshop we have used only naming convention for DSL scripts
-    (the DslScripts subfolder), without a formal package content specification.
+    Add the project with custom DSL concepts (e.g. Bookstore.Concepts) in the same solution
+    with the existing Rhetos application (Bookstore.Service).
+    The the Rhetos application add the project reference to the Bookstore.Concepts project,
+    in order to use the custom concepts during build.
 * Rhetos concept development
   * **Demonstrate** development of new concept "LastModifiedTime" with code generator on the
     example from the previous workshop topic "Low-level object model concepts".
@@ -71,14 +69,17 @@ Contents:
     and [code generator](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts/SimpleBusinessLogic/CreationTimeCodeGenerator.cs).
 * There are other code generators available (Database, REST web API, MVC client model, ...),
   and new custom generated files could be added (for example, a generated TypeScript classes for all entities).
-* Testing & debugging
+* Testing & debugging custom DSL concepts.
+* New concepts library can be released as a NuGet packages to be reused in other Rhetos applications.
+  The NuGet package can also contain DSL scripts, data-migration scripts, and other files.
+  See <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>.
 
 TODO: Overview of additional code generator plugin types (issue #310)
 
 Assignment:
 
-1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>
-2. Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
+1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
+2. Read the article <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>
 
 ## Extending DSL - Develop a macro concept
 
@@ -148,16 +149,16 @@ Documentation:
 Assignment:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Basic-permissions>.
-2. In order to test basic permissions, *disable*
+2. In order to test the basic permissions, *disable*
    [suppressed permissions](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#suppressing-permissions-in-a-development-environment)
    in development environment:
-   * In Rhetos server *web.config* file make sure that "Security.AllClaimsForUsers"
+   * In your application's *Web.config* file make sure that "Rhetos:AppSecurity:AllClaimsForUsers"
      is set to empty string "", and "BuiltinAdminOverride" to "False".
 3. Open a web browser, and read the data from any entity in your application through the
-   REST web API (for example <http://localhost/BookstoreRhetosServer/rest/Bookstore/Book/>)
+   REST web API (for example <http://localhost/Bookstore.Service/rest/Bookstore/Book/>)
    * The request should fail and display an error "Your account '***' is not registered in the system...".
      This is happening because we have disabled the override, and the basic permissions are now active.
-4. Open the Rhetos server homepage (for example <http://localhost/BookstoreRhetosServer/>),
+4. Open the Rhetos application homepage (for example <http://localhost/Bookstore.Service/>),
    and find your **account name** under the server status "User identity: ***".
 5. Add a new user directly in the database table (`Common.Principle`),
    set the Name to your account name
