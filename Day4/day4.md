@@ -153,7 +153,7 @@ Assignment:
    [suppressed permissions](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#suppressing-permissions-in-a-development-environment)
    in development environment:
    * In your application's *Web.config* file make sure that "Rhetos:AppSecurity:AllClaimsForUsers"
-     is set to empty string "", and "BuiltinAdminOverride" to "False".
+     is set to empty string "", and "Rhetos:AppSecurity:BuiltinAdminOverride" to "False" (or not specified).
 3. Open a web browser, and read the data from any entity in your application through the
    REST web API (for example <http://localhost/Bookstore.Service/rest/Bookstore/Book/>)
    * The request should fail and display an error "Your account '***' is not registered in the system...".
