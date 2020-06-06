@@ -36,7 +36,7 @@ Assignment:
 3. Test the concepts Lock, AutoCode and Logging by inserting data by POST request,
    and check the results in the database.
    Instructions for sending the POST request are available at
-   <https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application>.
+   <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#test-and-review-the-application>.
 
 ## Read-only data structures
 

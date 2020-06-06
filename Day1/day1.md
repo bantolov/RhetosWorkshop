@@ -16,6 +16,7 @@ Assignment:
 
 1. Follow the steps in the Prerequisites article (<https://github.com/Rhetos/Rhetos/wiki/Prerequisites>)
    to make sure that you have all the application development tools needed for this workshop.
+   * Make sure to install IntelliSense support for Rhetos DSL.
 
 ## What is Rhetos
 
@@ -35,6 +36,7 @@ Contents:
 * Domain-Specific Language
   * Declarative programming
   * Concepts, statements and code generators
+  * Metaprogramming
 * Example
   * Why is InvalidData separated from ItemFilter?
   * The validation is context-free (can be applied on the old data after a bug is fix).
@@ -70,9 +72,8 @@ Step-by-step development of a "hello world" application on the Rhetos platform.
 
 Documentation:
 
-* <https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application>
+* <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application>
 * <https://github.com/Rhetos/Rhetos/wiki/Prerequisites>
-* <https://github.com/Rhetos/Rhetos/wiki/Development-Environment-Setup>
 
 Contents:
 
@@ -80,15 +81,16 @@ Contents:
   Tutorials in this workshop are based on the demo application that will be created here.
   We will add new features to this application as we cover mode topics in the future.
 * Create a "Hello world" application (**Bookstore**) by following the step-by-step instruction from
-  [Create your first Rhetos application](https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application).
-  * Setup
-    * Prerequisites (assignment before day 1)
-    * Development environment setup
+  [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application-application).
+  * Development environment setup (assignment before day 1)
+  * Create a new application in Visual Studio
+  * Set up the database and user authentication
   * Write a simple DSL script
   * Build your application
-  * Test and review
+  * Test and review the application
     * **Demonstrate** and review the generated database and web API.
-  * A more complex build process example
+  * Publishing the application to a test environment or production
+  * A more complex project structure
     * You can **skip** this section for now.
 
 Assignment:
@@ -96,10 +98,10 @@ Assignment:
 For this demo application, create a bookstore management application (named “Bookstore”),
 roughly described below.
 
-1. Follow the steps from <https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application>.
+1. Follow the steps from <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application-application>.
    This includes "Prerequisites" and "Development environment setup".
-   * You can **skip** the chapter "A more complex build process example" for now.
-   * Make sure to execute all the tests from "Test and review" chapter.
+   * You can **skip** the chapters "A more complex project structure" and "Read next".
+   * Make sure to execute all the tests from "Test and review the application" chapter.
 
 ## Rhetos DSL syntax
 
@@ -120,10 +122,10 @@ Assignment:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-DSL-syntax>
 2. Rewrite all the statements from the short DSL script example from article
-   [Create your first Rhetos application](https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application)
+   [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#write-a-simple-dsl-script)
    to be written in "flat" format, without nested statements.
-   * Use the old "nested" format for future development.
-     The flat format is rarely used in practice, but this exercise helps
+   * Use the "nested" format for future development.
+     The "flat" format is rarely used in practice, but this exercise helps
      to understand how Rhetos looks at the statements in DSL scripts.
 
 ## Data model and relationships
@@ -180,8 +182,8 @@ Assignment notes and common issues:
 
 ## From LINQ to SQL
 
-This topic is not directly related to Rhetos.
-Basic understanding of LINQ queries is a prerequisite for further workshop topics.
+This topic is not directly related to Rhetos,
+but the basic understanding of LINQ queries is a prerequisite for further workshop topics.
 
 Assignment:
 

@@ -85,7 +85,7 @@ Contents:
 * We have already tested the generated REST web API in previous workshop topics.
   * If needed, **demonstrate** GET request in the browser address bar.
   * If needed, **demonstrate** GET and POST request in a browser extension
-    (see [instruction](https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application#test-and-review)).
+    (see [instruction](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#test-and-review-the-application)).
 
 Assignments:
 
@@ -98,7 +98,7 @@ Assignments:
    4. Read data with a generic property filter
    5. Paging: Read data from a second page, while displaying 5 records per page.
 4. Use any browser REST plugin to modify the data
-   (see [instruction](https://github.com/Rhetos/Rhetos/wiki/Create-your-first-Rhetos-application#test-and-review)):
+   (see [instruction](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#test-and-review-the-application)):
    1. POST
    2. PUT
    3. DELETE

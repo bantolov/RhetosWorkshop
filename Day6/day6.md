@@ -115,13 +115,14 @@ Assignment:
 ## Deploying Rhetos applications
 
 Best practices for deployment process on development, test and production environments.
-Additional features of DeployPackages utility.
+Additional features of Rhetos CLI utility.
 
 Documentation:
 
-* Bookstore build script example <https://github.com/Rhetos/Bookstore/blob/master/Build.ps1>
-* Command-line switches (`DeployPackages.exe /?`)
-* TODO: Tutorial on "Deploying Rhetos applications" (issue #313)
+* [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#publishing-the-application-to-a-test-environment-or-production)
+* [Rhetos CLI](https://github.com/Rhetos/Rhetos/wiki/Rhetos-CLI)
+* [Bookstore build script example](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1)
+* TODO: Tutorial on "Deploying Rhetos applications" (issue #313), based on contents below.
 
 Contents:
 
@@ -131,43 +132,37 @@ Contents:
     Don't use shared web application for development.
   * Review [Bookstore Build.ps1](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1).
 * Initial deployment on **test/production environment**
-  * Copy the web application (folder `dist\BookstoreRhetosServer`) to the server.
-  * Create an empty database and configure connection string.
-  * Setup IIS and .config files.
-  * Run `DeployPackages /DatabaseOnly` to upgrade the database (this will skip the steps that
-    download NuGet packages and generate the application binaries).
-    * DeployPackages (currently) requires sources of all packages. This can complicate deployment
-      if we were deploying some packages directly from source folder.
-      The solution is to deploy all Rhetos packages as NuGet packages, instead of deploying
-      directly from source folder (see RhetosPackages.config).
-      See how is this solved in [this commit](https://github.com/Rhetos/Bookstore/commit/f8ae2d33d8928e022107405ce5da22d04704785d)
-      for Bookstore demo application.
-      Now when Rhetos application is copied to production, the PackagesCache subfolder will
-      contain everything need for DeployPackages with DatabaseOnly.
+  * Read the instructions in section
+    [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#publishing-the-application-to-a-test-environment-or-production).
 * Upgrading **test/production environment** (deploying a new version)
-  * Copy the web application (folder `dist\BookstoreRhetosServer`) over the existing one,
-    while keeping the existing config files.
-  * Run `DeployPackages /DatabaseOnly` to upgrade the database.
-  * CI/CD
-* Understanding DeployPackages.exe
-  * Review the console output of DeployPackages.exe, for an overview of deployment steps.
-  * Review all command-line switches (`DeployPackages.exe /?`)
+  * Copy the applications and run `rhetos dbupdate`.
+  * Separate base configuration files (overwrite on each upgrade) from the environment-specific configuration.
+    See [Configuration management](https://github.com/Rhetos/Rhetos/wiki/Configuration-management) for details.
+  * CI/CD.
+* [Rhetos CLI](https://github.com/Rhetos/Rhetos/wiki/Rhetos-CLI) commands and options.
 * Troubleshooting deployment
-  * Error reporting: Errors in DSL, C# and SQL code.
-    DeployPackages.log for more details.
-    Uncomment TraceLog in `bin\DeployPackages.exe.config` for more details.
+  * Error analysis:
+    * Deployment errors and warnings are logged at `Logs\RhetosCli.log`.
+    * Uncomment `<logger...TraceLog...>` in `bin\rhetos.exe.config` for more detailed logging.
   * Performance issues with KeepSynchronized on large cache tables
     * See [Automatic recompute on deployment](https://github.com/Rhetos/Rhetos/wiki/Persisting-the-computed-data#automatic-recompute-on-deployment).
       and "Suppressing recompute on deployment".
-    * Usually we will manually update the cached data with a custom-made SQL script
-      if DeployPackages reported "Skipped recomputing {Target} from {Source}".
+    * We can manually update the cached data with a custom-made SQL script
+      if `rhetos dbupdate` reported warning "Skipped recomputing {Target} from {Source}".
   * Large database transactions (/ShortTransactions)
   * Incorrect drop-script for an SqlObject.
     See [Fixing an incorrect removal script](https://github.com/Rhetos/Rhetos/wiki/SqlObject-concept#troubleshooting-fixing-an-incorrect-removal-script).
+* Older applications use DeployPackages instead of Rhetos CLI:
+  * DeployPackages.exe is similar to running:
+    * nuget.exe restore
+    * rhetos.exe build
+    * csc.exe (C# compiler)
+    * rhetos.exe dbupdate.
+  * `DeployPackages.exe /DatabaseOnly` is equivalent to `rhetos.exe dbupdate`.
+  * Logging is similar: Configure `bin\DeployPackages.exe.config`,
+    log is written to `Logs\DeployPackages.log`.
 
 Assignment:
 
 * Publish your BookstoreRhetosServer application on a test environment,
   on a new empty database.
-  Make sure to run DeployPackages with `/DatabaseOnly` switch,
-  to avoid rebuilding the whole application.
