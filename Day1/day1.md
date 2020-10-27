@@ -81,7 +81,7 @@ Contents:
   Tutorials in this workshop are based on the demo application that will be created here.
   We will add new features to this application as we cover mode topics in the future.
 * Create a "Hello world" application (**Bookstore**) by following the step-by-step instruction from
-  [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application-application).
+  [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application).
   * Development environment setup (assignment before day 1)
   * Create a new application in Visual Studio
   * Set up the database and user authentication
@@ -98,7 +98,7 @@ Assignment:
 For this demo application, create a bookstore management application (named “Bookstore”),
 roughly described below.
 
-1. Follow the steps from <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application-application>.
+1. Follow the steps from <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application>.
    This includes "Prerequisites" and "Development environment setup".
    * You can **skip** the chapters "A more complex project structure" and "Read next".
    * Make sure to execute all the tests from "Test and review the application" chapter.
