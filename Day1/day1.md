@@ -78,7 +78,8 @@ Documentation:
 Contents:
 
 * Note:
-  Tutorials in this workshop are based on the demo application that will be created here.
+  Tutorials in this workshop are based on the demo application that will be created here
+  (a bookstore management application).
   We will add new features to this application as we cover mode topics in the future.
 * Create a "Hello world" application (**Bookstore**) by following the step-by-step instruction from
   [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application).
@@ -90,18 +91,9 @@ Contents:
   * Test and review the application
     * **Demonstrate** and review the generated database and web API.
   * Publishing the application to a test environment or production
+    * Read this section, but there is no need to publish to a new test environment for this tutorial.
   * A more complex project structure
     * You can **skip** this section for now.
-
-Assignment:
-
-For this demo application, create a bookstore management application (named “Bookstore”),
-roughly described below.
-
-1. Follow the steps from <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application>.
-   This includes "Prerequisites" and "Development environment setup".
-   * You can **skip** the chapters "A more complex project structure" and "Read next".
-   * Make sure to execute all the tests from "Test and review the application" chapter.
 
 ## Rhetos DSL syntax
 
@@ -124,7 +116,7 @@ Assignment:
 2. Rewrite all the statements from the short DSL script example from article
    [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#write-a-simple-dsl-script)
    to be written in "flat" format, without nested statements.
-   * Use the "nested" format for future development.
+   * Use the "nested" format in future development.
      The "flat" format is rarely used in practice, but this exercise helps
      to understand how Rhetos looks at the statements in DSL scripts.
 

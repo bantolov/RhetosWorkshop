@@ -18,6 +18,8 @@ TODO: Some topics currently have incomplete documentation (see TODO tags in othe
 Comprehension review:
 
 * What is Rhetos / Developing generated application without Rhetos
+* Build in Visual Studio: rhetos build, csc, rhetos dbupdate
+* When to use the Extends keyword and 1:1 relationships
 
 ## [Day 2](Day2/day2.md)
 
