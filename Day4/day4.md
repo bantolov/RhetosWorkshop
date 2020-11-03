@@ -59,8 +59,9 @@ Contents:
   * **Demonstrate** adding a new Visual Studio project for DLL with custom concepts.
     Add the project with custom DSL concepts (e.g. Bookstore.Concepts) in the same solution
     with the existing Rhetos application (Bookstore.Service).
-    The the Rhetos application add the project reference to the Bookstore.Concepts project,
+    In the Rhetos application add the project reference to the Bookstore.Concepts project,
     in order to use the custom concepts during build.
+    Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.Concepts project.
 * Rhetos concept development
   * **Demonstrate** development of new concept "LastModifiedTime" with code generator on the
     example from the previous workshop topic "Low-level object model concepts".
