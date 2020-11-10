@@ -26,8 +26,10 @@ Contents:
   * Review the Save method for Book in the generated application source.
     Note the method arguments (insertedNew, updatedNew).
     Note the tags in the Save method for inserting the new code (ArgumentValidation, Initialization).
-  * **Demonstrate** SaveMethod and Initialization concepts by updating a DateTime property to
-    last modification time.
+  * **Demonstrate** SaveMethod and Initialization concepts by updating a DateTime property
+    ("LastModifiedTime") to current time, when a record is modified.
+    To simplify the task, there is no need to verify if the record's values are actually modified,
+    only if the update is called (see updatedNew).
 * RepositoryUses
 * RepositoryMember
 
@@ -56,10 +58,10 @@ Contents:
 * In Rhetos framework source code, review the existing CommonConcepts concept definition classes:
   ModuleInfo, EntityInfo (DataStructureInfo) and CreationTimeInfo.
 * Creating a new class library project (a new DLL) for custom concepts as a part of your application.
-  * **Demonstrate** adding a new Visual Studio project for DLL with custom concepts.
-    Add the project with custom DSL concepts (e.g. Bookstore.Concepts) in the same solution
-    with the existing Rhetos application (Bookstore.Service).
-    In the Rhetos application add the project reference to the Bookstore.Concepts project,
+* **Demonstrate** adding a new Visual Studio project for implementing custom DSL concepts:
+    In the same solution with the existing Rhetos application (Bookstore.Service),
+    add the class library project with .NET Framework, named "Bookstore.Concepts".
+    In the Rhetos application add a project reference to the Bookstore.Concepts project,
     in order to use the custom concepts during build.
     Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.Concepts project.
 * Rhetos concept development
@@ -102,7 +104,7 @@ Contents:
 * Macro concept that inherits EntityInfo
   * **Demonstrate** on CodeTable.
   * Note that "inheritance" approach is not a best practice for this example,
-    because it prevent you from applying multiple such feature the same entity.
+    because it prevents you from applying multiple similar features to the same entity.
 * Macro concept can use *IDslModel*, for example to add some feature to each entity
   in a given module.
 
