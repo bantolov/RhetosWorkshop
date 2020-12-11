@@ -149,7 +149,7 @@ Assignment:
 3. Develop a Rhetos application for bookstore management:
    Continue your work on the application created earlier
    (see above in “Development environment setup and the first application”)
-   and write new DSL scripts that specify new entities and relations:
+   and write new DSL scripts that specifies new entities and relations:
     * Implement all examples from the article
       "[Data model and relationships](https://github.com/Rhetos/Rhetos/wiki/Data-model-and-relationships)"
       (simply read and copy the code snippets).
@@ -180,12 +180,12 @@ but the basic understanding of LINQ queries is a prerequisite for further worksh
 Assignment:
 
 1. Learn the basic LINQ methods: Select() and Where().
-2. Understand why the following 3 different LINQ query commands results
+2. Explain why the following 3 different LINQ query commands results
    with 3 different SQL queries generated: ![linq.png](linq.png)
    * Note: This image is a screenshot from LINQPad (a free C# utility),
      but you don’t need to install it or use it.
      This task is focused on the snippet of C# code that is visible
      in the screenshot, and the way that Entity Framework (or LINQ2SQL)
      would interpret the LINQ queries when generating the SQL queries.
-3. (optional) Advanced: Understand why the last commented line
+3. (optional) Advanced: Explain why the last commented line
    in the example above causes a compiler error.
