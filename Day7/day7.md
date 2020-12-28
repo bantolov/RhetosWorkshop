@@ -81,10 +81,24 @@ Documentation:
 
 Contents:
 
-* This will become simpler after integration with Visual Studio
-  (see [Roadmap](https://github.com/Rhetos/Rhetos/wiki/Rhetos-platform-roadmap)).
-  Custom written C# code will be built together with the generated code,
-  eliminating the circular reference issues.
+* Instead of implementing large blocks of C# code in DSL script (in Action or ComposableFilterBy, e.g.),
+  you can simply call some method implemented in a custom class.
+* The custom class can be implemented directly in Rhetos application (Rhetos v4 and later). The main benefit for
+  writing custom code in a separate class instead of in DSL script is that IntelliSense is available.
+  IntelliSense even includes generated code, such as repository classes and Entity Framework model.
+* Alternatively, the custom class can be implemented in an external library, with one of the following
+  design options to prevent circular dependency between the Rhetos application's code and the external library:
+  * A) External library does not reference the generated code from the Rhetos application (e.g. the repository classes).
+    This is a common solution for generic algorithms implementation.
+    C# code in DSL scripts and Rhetos application can directly reference the generated library (old Rhetos applications
+    with DeployPackages need to use ExternalReference concept).
+    The external library may provided interfaces that can be implemented by entities and other
+    data sources in DSL scripts, to simplify reading and writing data without directly referencing the generated code
+    (concepts Implements, ImplementsQueryable and RegisteredImplementation, and GenericRepository helper class).
+  * B) External library references the Rhetos application (to use repository classes, e.g.),
+    but the Rhetos application cannot reference the library to avoid circular reference.
+    This can be implemented by using reflection in Rhetos application to dynamically call the external library's methods.
+    With Rhetos v4 and later it is simpler to implement the custom classes directly in the Rhetos application instead.
 
 ## Temporal data and change history
 
