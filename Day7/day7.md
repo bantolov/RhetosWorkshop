@@ -95,6 +95,8 @@ Contents:
     The external library may provided interfaces that can be implemented by entities and other
     data sources in DSL scripts, to simplify reading and writing data without directly referencing the generated code
     (concepts Implements, ImplementsQueryable and RegisteredImplementation, and GenericRepository helper class).
+    See RatingSystem example with external algorithm [implementation](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Algorithms/RatingSystem.cs)
+    called from DSL [script](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/BookRating.rhe).
   * B) External library references the Rhetos application (to use repository classes, e.g.),
     but the Rhetos application cannot reference the library to avoid circular reference.
     This can be implemented by using reflection in Rhetos application to dynamically call the external library's methods.
