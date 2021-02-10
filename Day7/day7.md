@@ -26,6 +26,8 @@ Documentation:
 
 Contents:
 
+* See the presentation [Unit tests in Rhetos applications](https://omegasoftware365-my.sharepoint.com/:v:/r/personal/bantolovic_omega-software_hr/Documents/Snimke/Interna%20edukacija_%20Unit%20testovi%20u%20Rhetos%20aplikacijama-20210205_100435-Meeting%20Recording.mp4?csf=1&web=1&e=RKaaom)
+  (Croatian).
 * Introduction
   * Strictly speaking, we will develop *integration tests*, not pure unit tests,
     on VS unit testing framework.
