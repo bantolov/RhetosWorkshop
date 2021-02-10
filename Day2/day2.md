@@ -87,6 +87,8 @@ Contents:
     They can be used for customized and more complex data initialization.
 * Usage in the object model
 * Usage in the database
+* Usage in polymorphic implementation
+  * **Skip** this example for now. Polymorphic concept will be covered later in the workshop.
 
 ## Domain Object Model
 
@@ -140,8 +142,8 @@ Contents:
 * Modifying the data, Action concept
   * You can **skip** the chapter "Execute recompute (ComputedFrom)" for now.
   * Test the examples from the article.
-  * Note that the database transaction will be committed at the end of the using block
-    only if commitChanges parameter is set to true.
+  * Note that the database transaction for each scope is rolled back by default.
+    Call `scope.CommitChanges()` to commit the transaction.
 * Analyze the DSL model.
 * You can **skip** the chapter "Helpers for writing code snippets" for now.
 
