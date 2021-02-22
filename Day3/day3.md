@@ -81,7 +81,6 @@ Contents:
     are all available on GitHub.
     Most popular plugin is `Rhetos.RestGenerator`.
   * SOAP API is currently shipped with the Rhetos framework core.
-  * Review RhetosPackages.config, it should contain Rhetos.RestGenerator.
 * We have already tested the generated REST web API in previous workshop topics.
   * If needed, **demonstrate** GET request in the browser address bar.
   * If needed, **demonstrate** GET and POST request in a browser extension
@@ -89,7 +88,7 @@ Contents:
 
 Assignments:
 
-1. Review RhetosPackages.config, it should contain Rhetos.RestGenerator.
+1. Make sure that your test project contains a NuGet dependency to package 'Rhetos.RestGenerator'.
 2. Read the article <https://github.com/Rhetos/RestGenerator/blob/master/Readme.md>
 3. Use the address bar in the browser to get the following data
    1. All records from an entity
