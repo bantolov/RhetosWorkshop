@@ -4,7 +4,7 @@ TODO: Some topics currently have incomplete documentation (see TODO tags in othe
 
 ## [Day 1](Day1/day1.md)
 
-*(3 hours)*
+*(3 hours lecture)*
 
 1. Prerequisites for day 1 *(assignment)*
 2. What is Rhetos *(theory)*
@@ -23,7 +23,7 @@ Comprehension review:
 
 ## [Day 2](Day2/day2.md)
 
-*(3 hours)*
+*(3 hours lecture)*
 
 1. Simple business rules
 2. Read-only data structures
@@ -33,7 +33,7 @@ Comprehension review:
 
 ## [Day 3](Day3/day3.md)
 
-*(2 hours, Authentication and Authorization could be moved from day 4 to day 3 to reduce day 4)*
+*(2 hours lecture, Authentication and Authorization could be moved from day 4 to day 3 to reduce day 4)*
 
 1. Filters
 2. Validations
@@ -51,7 +51,7 @@ Comprehension review:
 
 ## [Day 4](Day4/day4.md)
 
-*(3 hours)*
+*(3 hours lecture)*
 
 1. Low-level object model concepts
    * When to use them *(theory)*
@@ -63,7 +63,7 @@ Comprehension review:
 
 ## [Day 5](Day5/day5.md)
 
-*(3 hours)*
+*(3 hours lecture)*
 
 1. Entity inheritance *(theory)*
 2. Event sourcing *(theory)*
@@ -72,7 +72,7 @@ Comprehension review:
 
 ## [Day 6](Day6/day6.md)
 
-*(3 hours)*
+*(3 hours lecture)*
 
 1. Migrating the application data when changing the database structure
    * Database structure independence *(theory)*
@@ -82,7 +82,7 @@ Comprehension review:
 
 ## [Day 7](Day7/day7.md)
 
-*(2 hours)*
+*(2 hours lecture)*
 
 1. Unit testing
 2. Implementing business logic in a separate library *(theory)*
