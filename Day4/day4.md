@@ -51,7 +51,7 @@ Documentation:
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of code generator concept *DeactivateOnDelete*,
   in project [src\Bookstore.Concepts](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Concepts).
-* <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>.
+* <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
 
 Contents:
 
@@ -75,14 +75,14 @@ Contents:
 * Testing & debugging custom DSL concepts.
 * New concepts library can be released as a NuGet packages to be reused in other Rhetos applications.
   The NuGet package can also contain DSL scripts, data-migration scripts, and other files.
-  See <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>.
+  See <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
 
 TODO: Overview of additional code generator plugin types (issue #310)
 
 Assignment:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
-2. Read the article <https://github.com/Rhetos/Rhetos/wiki/Creating-Rhetos-package>
+2. Read the article <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>
 
 ## Extending DSL - Develop a macro concept
 
