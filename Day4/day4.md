@@ -155,8 +155,10 @@ Assignment:
 2. In order to test the basic permissions, *disable*
    [suppressed permissions](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#suppressing-permissions-in-a-development-environment)
    in development environment:
-   * In your application's *Web.config* file make sure that "Rhetos:AppSecurity:AllClaimsForUsers"
-     is set to empty string "", and "Rhetos:AppSecurity:BuiltinAdminOverride" to "False" (or not specified).
+   * In your application's configuration file make sure that the following options are not specified, or disabled:
+     * "AllClaimsForAnonymous" set to false.
+     * "Rhetos:AppSecurity:AllClaimsForUsers" set to empty string "".
+     * "Rhetos:AppSecurity:BuiltinAdminOverride" to false.
 3. Open a web browser, and read the data from any entity in your application through the
    REST web API (for example <http://localhost/Bookstore.Service/rest/Bookstore/Book/>)
    * The request should fail and display an error "Your account '***' is not registered in the system...".
