@@ -135,8 +135,6 @@ Contents:
     and full-text search index (cannot be created inside a transaction).
 * Dependencies between database objects
 
-TODO: LegacyEntity tutorial with examples (issue #309)
-
 Assignments:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Database-objects>
