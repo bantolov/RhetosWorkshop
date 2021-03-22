@@ -3,16 +3,16 @@
 Notes for self-education:
 
 * The workshop is divided into days, each day containing several topics.
-* For each topic follow the instruction under chapters "Contents" and "Assignment".
-* The "Contents" chapter instructs what to read and try in practice.
-  It usually contains bullets with instructions what to do for each chapter of the referenced documentation.
+* For each topic, follow the instruction under chapters "Contents" and "Assignment".
+* The "Contents" section instructs what to read and try in practice.
+  It usually contains bullets with instructions what to do for each section of the referenced documentation.
   Look for the following marks:
-  * **Read** - Read the referenced documentation chapter, no need to implement it.
-  * **Demonstrate** - Implement the references example in your development environment, and test it.
-  * **Skip** - The referenced documentation chapter is not part of the current workshop topic.
-* The "Assignment" chapter contains a homework assignment.
+  * **Read** - Read the referenced documentation section, no need to implement it.
+  * **Demonstrate** - Implement the referenced example in your development environment, and test it.
+  * **Skip** - The referenced documentation section is not part of the current workshop topic.
+* The "Assignment" section contains a homework assignment.
   Implement it in you development environment.
-* The "Documentation" chapter is just a list of references.
+* The "Documentation" section is just a list of references.
 * Some topics currently have incomplete documentation (see TODO tags in other files).
 
 ## [Day 1](Day1/day1.md)
