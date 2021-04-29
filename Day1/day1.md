@@ -118,7 +118,7 @@ Assignment:
    to be written in "flat" format, without nested statements.
    * Use the "nested" format in future development.
      The "flat" format is rarely used in practice, but this exercise helps
-     to understand how Rhetos looks at the statements in DSL scripts.
+     to understand how Rhetos framework looks at the statements in DSL scripts.
 
 ## Data model and relationships
 
@@ -187,5 +187,5 @@ Assignment:
      This task is focused on the snippet of C# code that is visible
      in the screenshot, and the way that Entity Framework (or LINQ2SQL)
      would interpret the LINQ queries when generating the SQL queries.
-3. (optional) Advanced: Explain why the last commented line
+3. Advanced: Explain why the last commented line
    in the example above causes a compiler error.
