@@ -163,7 +163,8 @@ Assignment:
      Use the Dump() method to print all required data at once.
 5. Use the ToString() method on the LINQ query from the previous task
    to print the generated SQL query.
-6. By using the Action concept, write a server action for generating multiple books from one request,
-   and execute the Action from the LINQPad or the playground app.
+6. By using the Action concept, write a server action that creates multiple books and
+   inserts them into the database in a single web request.
+   Execute the Action from the LINQPad or the playground app.
    * Parameters for the action are: NumberOfBooks (how many needs to be generated)
      and Title (the generated books can have the same title).
