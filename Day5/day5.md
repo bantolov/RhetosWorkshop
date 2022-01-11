@@ -28,7 +28,10 @@ Contents:
 * Polymorphic concept
   * Basic usage
     * **Demonstrate** Polymorphic to implement previous example for "Table per Concrete Class".
-    * **Demonstrate** custom property implementation (Description = title + author name).
+    * **Demonstrate** custom property implementation for Book.Description, instead of adding a new column to the Book entity. It should return Title + ' ' + Author's name.
+      Use *Implements* concept, see the [SalesItem example](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/SalesItem.rhe).
+      * Hint: To develop the SQL code snippet for the Implements parameter, see where this code will end up in database:
+      See the generated view Book_As_SalesItem, copy the select query and modify the Description part until the query works as expected, then copy the Description part to the DSL script.
   * **Review basic principles** of polymorphic concept
     * Polymorphic is similar to an interface in C#:
       Any data structures can implement a given polymorphic by providing a *mapping*
