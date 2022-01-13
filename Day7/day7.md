@@ -19,9 +19,9 @@ Documentation:
 
 * Bookstore demo application
   * Overview of unit tests
-    <https://github.com/Rhetos/Bookstore/blob/master/Readme.md#unit-testing>
+    <https://github.com/Rhetos/Bookstore/blob/rhetos-4/Readme.md#unit-testing> (v4)
   * Integration testing project
-    [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
+    [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/rhetos-4/test/Bookstore.Service.Test) (v4)
 * TODO: "Unit testing" walkthrough (issue #314)
 
 Contents:
@@ -34,7 +34,7 @@ Contents:
   * We will use same technology as "playground" console application from
     [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
   * **Demonstrate** adding a new unit testing project in Bookstore application.
-    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
+    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/rhetos-4/test/Bookstore.Service.Test) (v4)
     for code structure and references.
   * **Demonstrate** writing a simple unit test: add a book and two comments,
     expect the cache entity value BookInfo.NumberOfComments to be 2.
@@ -42,9 +42,9 @@ Contents:
   * Unit tests should reuse a single static instance of `ProcessContainer`, to avoid running
     initialization code for each test (Entity Framework startup and plugin discovery).
   * **Develop** a helper class that initializes `ProcessContainer`
-    (for example [TestScope](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.Service.Test/Tools/TestScope.cs))
+    (for example [TestScope](https://github.com/Rhetos/Bookstore/blob/rhetos-4/test/Bookstore.Service.Test/Tools/TestScope.cs), v4)
     and use it in unit tests
-    (see Bookstore [tests](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.Service.Test/BookTest.cs)).
+    (see Bookstore [tests](https://github.com/Rhetos/Bookstore/blob/rhetos-4/test/Bookstore.Service.Test/BookTest.cs), v4).
   * Each TransactionScopeContainer instance represents a separate atomic database transaction
     (similar to a single web request).
 * Rhetos.TestCommon.TestUtility class best practices
@@ -73,7 +73,7 @@ Contents:
     because it includes both basic permissions (claims) and row permissions.
     It is usually better to directly test row permissions filters, because that
     provides a smaller scope for what is tested.
-* Review examples in [Bookstore](https://github.com/Rhetos/Bookstore) demo:
+* Review examples in [Bookstore](https://github.com/Rhetos/Bookstore/tree/rhetos-4) demo (v4):
   * A typical integration test: Test automatic updates of computed data that uses database view: BookTest.AutomaticallyUpdateNumberOfComments.
   * Test data validation that should throw an error in insert: BookTest.CommonMisspellingValidation.
   * Test a filer without using the database (standard unit test, not an integrations test): BookTest.CommonMisspellingValidation_DirectFilter.
@@ -102,7 +102,7 @@ Contents:
 * The custom class can be implemented directly in Rhetos application (Rhetos v4 and later). The main benefit for
   writing custom code in a separate class instead of in DSL script is that C# IntelliSense is available.
   IntelliSense even includes the generated code, such as repository classes and Entity Framework model.
-  For example see [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/BookRating.rhe)
+  For example see [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/rhetos-4/src/Bookstore.Service/DslScripts/BookRating.rhe) (v4)
   in DSL script, class RatingSystem that implements the feature, and unit test RatingSystemTest.
 * Alternatively, the custom class can be implemented in an external library, with one of the following
   design options to prevent circular dependency between the Rhetos application's code and the external library:
@@ -130,7 +130,7 @@ Documentation:
 
 * TODO: Overview of reporting approaches on Rhetos applications (issue #315)
 * Basic concepts: ReportData and ReportFile
-  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.Test/DslScripts/Computations.rhe)
+  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/rhetos-4/CommonConcepts/CommonConcepts.Test/DslScripts/Computations.rhe) (v4)
 * TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.
 
 ## Full-text search
