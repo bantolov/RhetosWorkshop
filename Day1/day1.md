@@ -155,9 +155,8 @@ Assignment:
       (simply read and copy the code snippets).
     * Additionally implement the *employees* management in the bookstore application:
         1. Each employee has name and a unique VAT number.
-        2. Some of the employees are managers, each manager has
-           additional textual information on bonuses
-           (1:1 relationship to Employee entity).
+        2. Some of the employees are managers (1:1 relationship to Employee entity),
+           each manager has additional textual information on bonuses.
         3. Each employee can have multiple education records,
            with date and description (1:N relationship).
         4. Bookstore has departments, each department has a unique code and description.
