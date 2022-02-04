@@ -156,9 +156,9 @@ Assignment:
 3. By using only Load() methods from the repositories,
    for each book print the book title and the name of its author.
    * Notes: You can use the `Load()` method without parameters to read all the books,
-     and use the `Load(Guid[])` method with ID parameter to read the author for each book.
+     and then use the `Load(Guid[])` method with ID parameter to read the author for each book.
    * This approach is not efficient.
-4. By using a Query() method, for all books print the book title number and the name of its author.
+4. By using a Query() method, for all books print the book title and the name of its author.
    * Notes: This will require only one Query() with a Select() method.
      Use the Dump() method to print all required data at once.
 5. Use the ToString() method on the LINQ query from the previous task
