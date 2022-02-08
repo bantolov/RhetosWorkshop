@@ -130,7 +130,7 @@ Documentation:
 
 * TODO: Overview of reporting approaches on Rhetos applications (issue #315)
 * Basic concepts: ReportData and ReportFile
-  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/rhetos-4/CommonConcepts/CommonConcepts.Test/DslScripts/Computations.rhe) (v4)
+  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/release-4/CommonConcepts/CommonConceptsTest/DslScripts/Computations.rhe) (v4)
 * TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.
 
 ## Full-text search
