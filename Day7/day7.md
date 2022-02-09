@@ -130,7 +130,7 @@ Documentation:
 
 * TODO: Overview of reporting approaches on Rhetos applications (issue #315)
 * Basic concepts: ReportData and ReportFile
-  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/release-4/CommonConcepts/CommonConceptsTest/DslScripts/Computations.rhe) (v4)
+  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.TestApp/DslScripts/Computations.rhe)
 * TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.
 
 ## Full-text search
@@ -140,7 +140,7 @@ Documentation:
 * [SqlObject](https://github.com/Rhetos/Rhetos/wiki/SqlObject-concept),
   for creating full-text search catalog and index
   * Example in unit test
-    [FullTextSearchTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.Test/DslScripts/FullTextSearchTest.rhe)
+    [FullTextSearchTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.TestApp/DslScripts/FullTextSearchTest.rhe)
   * FTS objects cannot be created in a database transaction.
 * Rhetos contains EF LINQ extension methods for FullTextSearch
   * See [DatabaseExtensionFunctions.cs](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts.Interfaces/DatabaseExtensionFunctions.cs)
