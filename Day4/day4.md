@@ -155,7 +155,7 @@ Assignment:
 2. In order to test the basic permissions, *disable*
    [suppressed permissions](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#suppressing-permissions-in-a-development-environment)
    in development environment:
-   * In your application's configuration file make sure that the following options are not specified, or disabled:
+   * In your application's configuration file make sure that the following options are *not specified*, or disabled:
      * "AllClaimsForAnonymous" set to false.
      * "Rhetos:AppSecurity:AllClaimsForUsers" set to empty string "".
      * "Rhetos:AppSecurity:BuiltinAdminOverride" to false.
@@ -193,8 +193,8 @@ Assignment:
 
 Assignment notes and common issues:
 
-* When testing row permissions, you can return the Web.config to the old configuration:
-  `<add key="BuiltinAdminOverride" value="True" />`, if you have changed it previously
+* When testing row permissions, you can return the app's settings to the old configuration values
+  (set AllClaimsForUsers or AllClaimsForAnonymous), if you have changed it previously
   while testing Basic permissions.
 * Basic permissions (claims) and row permissions are working at the same time.
   For example, for a user to read an entity, he or she should have both:
