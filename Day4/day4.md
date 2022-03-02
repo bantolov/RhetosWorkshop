@@ -50,7 +50,7 @@ Documentation:
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of code generator concept *DeactivateOnDelete*,
-  in project [src\Bookstore.Concepts](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Concepts).
+  in project [src\Bookstore.RhetosExtensions](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.RhetosExtensions).
 * <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
 
 Contents:
@@ -60,10 +60,10 @@ Contents:
 * Creating a new class library project (a new DLL) for custom concepts as a part of your application.
 * **Demonstrate** adding a new Visual Studio project for implementing custom DSL concepts:
     In the same solution with the existing Rhetos application (Bookstore.Service),
-    add the class library project with .NET Framework, named "Bookstore.Concepts".
-    In the Rhetos application add a project reference to the Bookstore.Concepts project,
+    add the class library project with .NET Framework, named "Bookstore.RhetosExtensions".
+    In the Rhetos application add a project reference to the Bookstore.RhetosExtensions project,
     in order to use the custom concepts during build.
-    Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.Concepts project.
+    Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.RhetosExtensions project.
 * Rhetos concept development
   * **Demonstrate** development of new concept "LastModifiedTime" with code generator on the
     example from the previous workshop topic "Low-level object model concepts".
@@ -94,7 +94,7 @@ Documentation:
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
 * [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
   an example of macro concept *PhoneNumber*,
-  in [src\Bookstore.Concepts](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.Concepts).
+  in [src\Bookstore.RhetosExtensions](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.RhetosExtensions).
 
 Contents:
 
