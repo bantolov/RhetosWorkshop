@@ -119,7 +119,7 @@ Additional features of Rhetos CLI utility.
 
 Documentation:
 
-* [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#publishing-the-application-to-a-test-environment-or-production)
+* [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup#publishing-the-application-to-a-test-environment-or-production)
 * [Rhetos CLI](https://github.com/Rhetos/Rhetos/wiki/Rhetos-CLI)
 * [Bookstore build script example](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1)
 * TODO: Tutorial on "Deploying Rhetos applications" (issue #313), based on contents below.
@@ -133,7 +133,7 @@ Contents:
   * Review [Bookstore Build.ps1](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1).
 * Initial deployment on **test/production environment**
   * Read the instructions in section
-    [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#publishing-the-application-to-a-test-environment-or-production).
+    [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup#publishing-the-application-to-a-test-environment-or-production).
 * Upgrading **test/production environment** (deploying a new version)
   * Copy the applications and run `rhetos dbupdate`.
   * Separate base configuration files (overwrite on each upgrade) from the environment-specific configuration.

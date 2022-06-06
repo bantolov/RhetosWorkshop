@@ -94,7 +94,7 @@ Contents:
   * Additional integration/extension options
     * Adding Rhetos dashboard - Demonstrate
     * Adding Rhetos.RestGenerator - Demonstrate. No need to follow links to RestGenerator documentation, it will be covered later.
-    * View Rhetos.RestGenerator endpoints in Swagger - Demonstrate. No need to follow links to RestGenerator documentation, it will be covered later.
+    * View Rhetos REST endpoints in Swagger - Demonstrate. No need to follow links to RestGenerator documentation, it will be covered later.
     * Use NLog to write application's system log into a file - Skip
     * Adding localization - Skip
     * Improve Entity Framework performance - Skip

@@ -11,7 +11,7 @@ Topics:
 
 Rhetos CommonConcepts package contains some simple business rules that are
 common in many applications.
-Then can often be used by simply declaring them on an entity or a property.
+They can often be used by simply declaring them on an entity or a property.
 
 Documentation:
 
@@ -33,10 +33,10 @@ Assignment:
 2. Use the following concepts from the article at least once in your bookstore application DSL scripts:
    Lock, DenyUserEdit, DefaultValue, AutoCode, CreationTime, ModificationTimeOf,
    Logging, AllProperties, Deactivatable.
-3. Test the concepts Lock, AutoCode and Logging by inserting data by POST request,
+3. **Demonstrate** the concepts Lock, AutoCode and Logging: Insert data using a POST request,
    and check the results in the database.
-   Instructions for sending the POST request are available at
-   <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#test-and-review-the-application>.
+   Instructions for sending the POST request are available in section
+   [View Rhetos REST endpoints in Swagger](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup#view-rhetos-rest-endpoints-in-swagger).
 
 ## Read-only data structures
 
