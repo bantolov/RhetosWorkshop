@@ -15,8 +15,10 @@ Topics:
 Assignment:
 
 1. Follow the steps in the Prerequisites article (<https://github.com/Rhetos/Rhetos/wiki/Prerequisites>)
-   to make sure that you have all the application development tools needed for this workshop.
-   * Make sure to install IntelliSense support for Rhetos DSL.
+   to make sure that you have all the application development tools needed for this workshop
+   * Install all tools from "Recommended application development environment".
+   * Make sure to install Visual Studio 2022 IntelliSense support for Rhetos DSL.
+   * Other texts editors from "Configure your text editor for Rhetos DSL scripts" are not needed for this workshop.
 
 ## What is Rhetos
 
@@ -39,7 +41,8 @@ Contents:
   * Metaprogramming
 * Example
   * Why is InvalidData separated from ItemFilter?
-  * The validation is context-free (can be applied on the old data after a bug is fix).
+  * The validation should not depend on the operation context (invariant).
+    For example, it can be applied on the old data after a bug is fix.
   * AutoCode seems simple, but contains a lot of optimization and concurrency control.
     Standardization and simple reuse of these features are great benefits.
 * Deployment
@@ -72,8 +75,8 @@ Step-by-step development of a "hello world" application on the Rhetos platform.
 
 Documentation:
 
-* <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application>
-* <https://github.com/Rhetos/Rhetos/wiki/Prerequisites>
+* <https://github.com/Rhetos/Rhetos/wiki/Creating-a-new-application-with-Rhetos-framework>
+* <https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup>
 
 Contents:
 
@@ -81,19 +84,22 @@ Contents:
   Tutorials in this workshop are based on the demo application that will be created here
   (a bookstore management application).
   We will add new features to this application as we cover mode topics in the future.
-* Create a "Hello world" application (**Bookstore**) by following the step-by-step instruction from
-  [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application).
-  * Development environment setup (assignment before day 1)
-  * Create a new application in Visual Studio
-  * Set up the database and user authentication
-  * Write a simple DSL script
-  * Build your application
-  * Test and review the application
-    * **Demonstrate** and review the generated database and web API.
-  * Publishing the application to a test environment or production
-    * Read this section, but there is no need to publish to a new test environment for this tutorial.
-  * A more complex project structure
-    * You can **skip** this section for now.
+* [Creating a new application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-a-new-application-with-Rhetos-framework).
+  * Create a "Hello world" application (**Bookstore**) by following the step-by-step instruction.
+  * **Demonstrate** and review the generated database and web API.
+* [Recommended application setup](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup)
+  * Additional development environment setup
+    * Using Visual Studio and automatic dbupdate - Demonstrate
+    * Setup git repository - Demonstrate
+  * Additional integration/extension options
+    * Adding Rhetos dashboard - Demonstrate
+    * Adding Rhetos.RestGenerator - Demonstrate. No need to follow links to RestGenerator documentation, it will be covered later.
+    * View Rhetos.RestGenerator endpoints in Swagger - Demonstrate. No need to follow links to RestGenerator documentation, it will be covered later.
+    * Use NLog to write application's system log into a file - Skip
+    * Adding localization - Skip
+    * Improve Entity Framework performance - Skip
+  * Publishing the application to a test environment or production - Read
+  * A more complex project structure - Skip
 
 ## Rhetos DSL syntax
 
@@ -114,7 +120,7 @@ Assignment:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/Rhetos-DSL-syntax>
 2. Rewrite all the statements from the short DSL script example from article
-   [Creating a new WCF application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application#write-a-simple-dsl-script)
+   [Creating a new application with Rhetos framework](https://github.com/Rhetos/Rhetos/wiki/Creating-a-new-application-with-Rhetos-framework#introduction-rhetos-dsl-programming-language)
    to be written in "flat" format, without nested statements.
    * Use the "nested" format in future development.
      The "flat" format is rarely used in practice, but this exercise helps
