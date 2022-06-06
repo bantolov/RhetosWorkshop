@@ -14,7 +14,7 @@ Topics:
 
 Assignment:
 
-1. Follow the steps in the Prerequisites article (<https://github.com/Rhetos/Rhetos/wiki/Prerequisites>)
+1. Follow the steps in the Prerequisites article (<https://github.com/Rhetos/Rhetos/wiki/Prerequisites-v4>)
    to make sure that you have all the application development tools needed for this workshop.
    * Make sure to install IntelliSense support for Rhetos DSL.
 
@@ -73,7 +73,7 @@ Step-by-step development of a "hello world" application on the Rhetos platform.
 Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Creating-new-WCF-Rhetos-application>
-* <https://github.com/Rhetos/Rhetos/wiki/Prerequisites>
+* <https://github.com/Rhetos/Rhetos/wiki/Prerequisites-v4>
 
 Contents:
 

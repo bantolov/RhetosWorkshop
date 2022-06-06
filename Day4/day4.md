@@ -137,11 +137,11 @@ Assignment:
 
 Documentation:
 
-* <https://github.com/Rhetos/Rhetos/wiki/User-authentication-and-authorization>
+* <https://github.com/Rhetos/Rhetos/wiki/User-authentication-and-authorization-v4>
 
 Assignment:
 
-1. Read the article <https://github.com/Rhetos/Rhetos/wiki/User-authentication-and-authorization>.
+1. Read the article <https://github.com/Rhetos/Rhetos/wiki/User-authentication-and-authorization-v4>.
 
 ## Authorization - Basic permissions
 
