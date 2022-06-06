@@ -6,6 +6,8 @@ Topics:
 2. [Extending DSL - Develop a code generator](#extending-dsl---develop-a-code-generator)
 3. [Extending DSL - Develop a macro concept](#extending-dsl---develop-a-macro-concept)
 4. [User authentication](#user-authentication)
+   1. [Demo - Windows authentication](#demo---windows-authentication)
+   2. [Demo - Adding ASP.NET authentication and connecting it to Rhetos](#demo---adding-aspnet-authentication-and-connecting-it-to-rhetos)
 5. [Authorization - Basic permissions](#authorization---basic-permissions)
 6. [Authorization - Row permissions](#authorization---row-permissions)
 7. [Follow-up assignment review](#follow-up-assignment-review)
@@ -142,6 +144,107 @@ Documentation:
 Assignment:
 
 1. Read the article <https://github.com/Rhetos/Rhetos/wiki/User-authentication-and-authorization>.
+
+### Demo - Windows authentication
+
+After enabling Windows authentication, edit Rhetos configuration settings to disable option AllClaimsForAnonymous.
+For security reasons, Rhetos will report an error if trying to use authenticated users on an application with full anonymous access.
+
+* Remove configuration option Rhetos:AppSecurity:AllClaimsForAnonymous, or set it to `false`.
+  It might be located in *appsettings.json* file.
+
+Testing Windows authentication:
+
+* In [Bookstore demo](https://github.com/Rhetos/Bookstore) application,
+  you can test the user authentication at
+  `{BASE-URL}/rest/DemoAuthentication/UserInfoReport`.
+  This web request requires user authentication:
+  Authorizing user's access to the resource, by configuring [AllClaimsForUsers](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#automatic-user-management) option,
+  or add the current user name to [Common.Principal](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#common-administration-activities) database table
+  and insert the required permission into [Common.PrincipalPermission](https://github.com/Rhetos/Rhetos/wiki/Basic-permissions#common-administration-activities) table.
+* Rhetos dashboard if enabled displays current username and authentication method.
+  See `{BASE-URL}/rhetos`.
+
+### Demo - Adding ASP.NET authentication and connecting it to Rhetos
+
+* For example, to add Windows Authentication to your application,
+  you can follow the ASP.NET documentation:
+  [Configure Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-6.0&tabs=visual-studio).
+
+In this example we will use an overly simplified authentication method with hardcoded username.
+This is useless for real applications, but it can help with testing demo application in this tutorial.
+
+Add authentication to ASP.NET application. Modify `Program.cs`:
+
+```cs
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
+```
+
+Add service configuration:
+
+```cs
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(o => o.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        return Task.CompletedTask;
+    });
+```
+
+And authentication immediately before `UseAuthorization()`:
+
+```cs
+app.UseAuthentication();
+```
+
+Modify `DemoController.cs`
+
+```cs
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Threading.Tasks;
+using System.Security.Claims;
+```
+
+and a new method to allow us to sign-in:
+
+```cs
+[HttpGet]
+public async Task Login()
+{
+    var claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, "SampleUser") }, CookieAuthenticationDefaults.AuthenticationScheme);
+
+    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+        new ClaimsPrincipal(claimsIdentity),
+        new AuthenticationProperties() { IsPersistent = true });
+}
+```
+
+This is simple stub code to sign-in `SampleUser` so we have a valid user to work with.
+
+In `appsettings.json` set `AllClaimsForAnonymous` to `false`. This disables anonymous workaround we have been using so far.
+
+If you run the app now and navigate to `http://localhost:5000/Demo/Login`
+and then to `http://localhost:5000/Demo/ReadBooks`, you will receive an error:
+`UserException: Your account 'SampleUser' is not registered in the system. Please contact the system administrator.`
+
+Since "SampleUser" doesn't exist in Rhetos we will use a simple configuration feature to treat him as admin.
+
+Add to `appsettings.json`:
+
+```json
+"Rhetos": {
+  "AppSecurity": {
+    "AllClaimsForUsers": "SampleUser"
+  }
+}
+```
+
+`http://localhost:5000/Demo/ReadBooks` should now correctly return number of books.
+
+Browse to Rhetos dashboard `https://localhost:5000/rhetos`,
+it should show User identity: SampleUser, and User authentication type: Cookies.
 
 ## Authorization - Basic permissions
 
