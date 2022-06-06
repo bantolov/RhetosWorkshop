@@ -166,7 +166,7 @@ Documentation:
   * BookInfo.rhe (a similar example)
   * BookRating.rhe (data source is not a view, but an external C# algorithm).
 * You can also find a short explanation of how the ChangesOnChangedItems works in LINQPad script
-  <https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/LinqPad/Shipment%20state.linq>
+  <https://github.com/Rhetos/Bookstore/blob/rhetos-4/src/Bookstore.Service/LinqPad/Shipment%20state.linq>
 
 Contents:
 

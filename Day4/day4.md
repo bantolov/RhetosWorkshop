@@ -48,7 +48,7 @@ in user requirements or integration with new technologies.
 Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
-* [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
+* [Bookstore](https://github.com/Rhetos/Bookstore/tree/rhetos-4) demo application contains
   an example of code generator concept *DeactivateOnDelete*,
   in project [src\Bookstore.RhetosExtensions](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.RhetosExtensions).
 * <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
@@ -92,7 +92,7 @@ Instead of generating additional application code, they simply create new concep
 Documentation:
 
 * <https://github.com/Rhetos/Rhetos/wiki/Rhetos-concept-development>
-* [Bookstore](https://github.com/Rhetos/Bookstore) demo application contains
+* [Bookstore](https://github.com/Rhetos/Bookstore/tree/rhetos-4) demo application contains
   an example of macro concept *PhoneNumber*,
   in [src\Bookstore.RhetosExtensions](https://github.com/Rhetos/Bookstore/tree/master/src/Bookstore.RhetosExtensions).
 

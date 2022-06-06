@@ -159,11 +159,11 @@ Contents:
 
 Two available plugins:
 
-* [Rhetos.I18NFormatter](https://github.com/Rhetos/I18NFormatter/blob/master/Readme.md) -
+* [Rhetos.I18NFormatter](https://github.com/Rhetos/I18NFormatter/blob/rhetos-4/Readme.md) -
   Support for generic ASP.NET module, [i18n](https://github.com/turquoiseowl/i18n),
   that works with [GetText / PO](http://en.wikipedia.org/wiki/Gettext) language files.
   I18N localization module can be placed directly on Rhetos application or on a proxy/gateway web application.
-* [Rhetos.MvcModelGenerator](https://github.com/Rhetos/MvcModelGenerator) -
+* [Rhetos.MvcModelGenerator](https://github.com/Rhetos/MvcModelGenerator/tree/rhetos-4) -
   Support for front-end localization with MVC metadata attributed and captions in *resx* files.
 
 ## Rhetos on GitHub
