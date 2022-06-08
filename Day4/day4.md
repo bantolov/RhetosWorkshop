@@ -61,25 +61,25 @@ Contents:
   ModuleInfo, EntityInfo (DataStructureInfo) and CreationTimeInfo.
 * Creating a new class library project (a new DLL) for custom concepts as a part of your application.
 * **Demonstrate** adding a new Visual Studio project for implementing custom DSL concepts:
-    In the same solution with the existing Rhetos application (Bookstore.Service),
-    add the class library project with .NET Framework, named "Bookstore.RhetosExtensions".
-    In the Rhetos application add a project reference to the Bookstore.RhetosExtensions project,
+  * In the same solution with the existing Rhetos application (Bookstore.Service),
+    add a "Class Library" C# project, named "Bookstore.RhetosExtensions" located in "src" subfolder,
+    with .NET 6 framework.
+  * In the Bookstore.Service application add a *project reference* to the Bookstore.RhetosExtensions project,
     in order to use the custom concepts during build.
-    Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.RhetosExtensions project.
+  * Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.RhetosExtensions project.
 * Rhetos concept development
   * **Demonstrate** development of new concept "LastModifiedTime" with code generator on the
     example from the previous workshop topic "Low-level object model concepts".
     The new concept is similar to the existing concept CreationTime,
-    see [definition](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dsl.DefaultConcepts/SimpleBusinessLogic/CreationTimeInfo.cs)
+    see [concept syntax definition](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dsl.DefaultConcepts/SimpleBusinessLogic/CreationTimeInfo.cs)
     and [code generator](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts/SimpleBusinessLogic/CreationTimeCodeGenerator.cs).
 * There are other code generators available (Database, REST web API, MVC client model, ...),
-  and new custom generated files could be added (for example, a generated TypeScript classes for all entities).
+  and new custom generated files could be added (for example, generating [TypeScript classes](https://github.com/Rhetos/FloydExtensions)
+  for all entities).
 * Testing & debugging custom DSL concepts.
 * New concepts library can be released as a NuGet packages to be reused in other Rhetos applications.
   The NuGet package can also contain DSL scripts, data-migration scripts, and other files.
   See <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
-
-TODO: Overview of additional code generator plugin types (issue #310)
 
 Assignment:
 
