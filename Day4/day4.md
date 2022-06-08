@@ -263,10 +263,10 @@ Assignment:
      * "Rhetos:AppSecurity:AllClaimsForUsers" set to empty string "".
      * "Rhetos:AppSecurity:BuiltinAdminOverride" to false.
 3. Open a web browser, and read the data from any entity in your application through the
-   REST web API (for example <http://localhost/Bookstore.Service/rest/Bookstore/Book/>)
+   REST web API (for example <https://localhost:5000/rest/Bookstore/Book/>)
    * The request should fail and display an error "Your account '***' is not registered in the system...".
      This is happening because we have disabled the override, and the basic permissions are now active.
-4. Open the Rhetos application homepage (for example <http://localhost/Bookstore.Service/>),
+4. Open the Rhetos application homepage (for example <https://localhost:5000/>),
    and find your **account name** under the server status "User identity: ***".
 5. Add a new user directly in the database table (`Common.Principle`),
    set the Name to your account name
