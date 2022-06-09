@@ -147,11 +147,15 @@ Assignment:
 
 ### Demo - Windows authentication
 
-After enabling Windows authentication, edit Rhetos configuration settings to disable option AllClaimsForAnonymous.
-For security reasons, Rhetos will report an error if trying to use authenticated users on an application with full anonymous access.
+For example, to add Windows Authentication to your application,
+you can follow the ASP.NET documentation:
+[Configure Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-6.0&tabs=visual-studio).
+
+After enabling Windows authentication, edit Rhetos configuration settings to disable option AllClaimsForAnonymous:
 
 * Remove configuration option Rhetos:AppSecurity:AllClaimsForAnonymous, or set it to `false`.
   It might be located in *appsettings.json* file.
+* For security reasons, Rhetos will report an error if trying to use authenticated users on an application with full anonymous access.
 
 Testing Windows authentication:
 
@@ -166,10 +170,6 @@ Testing Windows authentication:
   See `{BASE-URL}/rhetos`.
 
 ### Demo - Adding ASP.NET authentication and connecting it to Rhetos
-
-* For example, to add Windows Authentication to your application,
-  you can follow the ASP.NET documentation:
-  [Configure Windows Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth?view=aspnetcore-6.0&tabs=visual-studio).
 
 In this example we will use an overly simplified authentication method with hardcoded username.
 This is useless for real applications, but it can help with testing demo application in this tutorial.
@@ -266,7 +266,7 @@ Assignment:
    REST web API (for example <https://localhost:5000/rest/Bookstore/Book/>)
    * The request should fail and display an error "Your account '***' is not registered in the system...".
      This is happening because we have disabled the override, and the basic permissions are now active.
-4. Open the Rhetos application homepage (for example <https://localhost:5000/>),
+4. Open the Rhetos dashboard (for example <https://localhost:5000/rhetos>),
    and find your **account name** under the server status "User identity: ***".
 5. Add a new user directly in the database table (`Common.Principle`),
    set the Name to your account name
