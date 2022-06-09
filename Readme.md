@@ -47,7 +47,6 @@ Comprehension review:
 
 Comprehension review:
 
-* Almost all data processing in application is done in read-only data structures and filters (day2)
 * When to use Load or Query (Load-Save, navigation properties)
 
 ## [Day 3](Day3/day3.md)
@@ -61,6 +60,7 @@ Comprehension review:
 
 Comprehension review:
 
+* Almost all data processing in application should be implemented in read-only data structures and filters
 * Filters / When to use FilterBy, ItemFilter or ComposableFilterBy
 * Filters / When not to write filters
 * Data validations / Understanding data validations in Rhetos
