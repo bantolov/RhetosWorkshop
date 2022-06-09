@@ -32,7 +32,8 @@ Comprehension review:
 
 * What is Rhetos / Developing generated application without Rhetos
 * Build in Visual Studio: rhetos build, csc, rhetos dbupdate
-* When to use the Extends keyword and 1:1 relationships
+* When to use the Extends and Detail; Two writes for Extended entity
+* LINQ evaluation
 
 ## [Day 2](Day2/day2.md)
 
@@ -43,6 +44,11 @@ Comprehension review:
 3. Simple read-only entities and code tables *(new)*
 4. Domain Object Model
    * Understanding the generated object model *(theory)*
+
+Comprehension review:
+
+* Almost all data processing in application is done in read-only data structures and filters (day2)
+* When to use Load or Query (Load-Save, navigation properties)
 
 ## [Day 3](Day3/day3.md)
 
