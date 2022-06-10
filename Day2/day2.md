@@ -143,7 +143,7 @@ Contents:
   * You can **skip** the chapter "Execute recompute (ComputedFrom)" for now.
   * Test the examples from the article.
   * Note that the database transaction for each scope is rolled back by default.
-    Call `scope.CommitChanges()` to commit the transaction.
+    Call `scope.CommitAndClose()` to commit the transaction.
 * Analyze the DSL model.
 * You can **skip** the chapter "Helpers for writing code snippets" for now.
 

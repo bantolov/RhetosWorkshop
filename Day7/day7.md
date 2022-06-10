@@ -19,9 +19,9 @@ Documentation:
 
 * Bookstore demo application
   * Overview of unit tests
-    <https://github.com/Rhetos/Bookstore/blob/rhetos-4/Readme.md#unit-testing> (v4)
+    <https://github.com/Rhetos/Bookstore/blob/master/Readme.md#unit-testing>
   * Integration testing project
-    [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/rhetos-4/test/Bookstore.Service.Test) (v4)
+    [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
 * TODO: "Unit testing" walkthrough (issue #314)
 
 Contents:
@@ -34,7 +34,7 @@ Contents:
   * We will use same technology as "playground" console application from
     [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
   * **Demonstrate** adding a new unit testing project in Bookstore application.
-    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/rhetos-4/test/Bookstore.Service.Test) (v4)
+    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
     for code structure and references.
   * **Demonstrate** writing a simple unit test: add a book and two comments,
     expect the cache entity value BookInfo.NumberOfComments to be 2.
@@ -42,9 +42,10 @@ Contents:
   * Unit tests should reuse a single static instance of `ProcessContainer`, to avoid running
     initialization code for each test (Entity Framework startup and plugin discovery).
   * **Develop** a helper class that initializes `ProcessContainer`
-    (for example [TestScope](https://github.com/Rhetos/Bookstore/blob/rhetos-4/test/Bookstore.Service.Test/Tools/TestScope.cs), v4)
-    and use it in unit tests
-    (see Bookstore [tests](https://github.com/Rhetos/Bookstore/blob/rhetos-4/test/Bookstore.Service.Test/BookTest.cs), v4).
+    (for example [TestScope](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test/Tools/TestScope.cs))
+    and use it in unit tests.
+    See TestScope usage in the Bookstore test
+    [CommonMisspellingValidation](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L58).
   * Each TransactionScopeContainer instance represents a separate atomic database transaction
     (similar to a single web request).
 * Rhetos.TestCommon.TestUtility class best practices
@@ -73,19 +74,27 @@ Contents:
     because it includes both basic permissions (claims) and row permissions.
     It is usually better to directly test row permissions filters, because that
     provides a smaller scope for what is tested.
-* Review examples in [Bookstore](https://github.com/Rhetos/Bookstore/tree/rhetos-4) demo (v4):
-  * A typical integration test: Test automatic updates of computed data that uses database view: BookTest.AutomaticallyUpdateNumberOfComments.
-  * Test data validation that should throw an error in insert: BookTest.CommonMisspellingValidation.
-  * Test a filer without using the database (standard unit test, not an integrations test): BookTest.CommonMisspellingValidation_DirectFilter.
-  * Standard unit tests for a more complex data processing: RatingSystemTest.SimpleRatings.
+* Review examples in [Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test) demo:
+  * A typical integration test: Test automatic updates of computed data that uses database view:
+    BookTest.AutomaticallyUpdateNumberOfComments.
+  * Test data validation that should throw an error in insert:
+    BookTest.CommonMisspellingValidation.
+  * Test a filer without using the database (standard unit test, not an integrations test):
+    BookTest.CommonMisspellingValidation_DirectFilter.
+  * Standard unit tests for a more complex data processing:
+    RatingSystemTest.SimpleRatings.
     * Hint: Create string 'report' when testing for multiple values in a list.
       This will provide a simple and complete overview of actual and expected data in case the test fails.
-    * Hint: Separate standard unit tests from integration tests with TestCategoryAttribute, or by placing them in a separate project.
-      This will allow developer to execute fast standard tests more often and slow integration test only when need (nightly build, e.g.).
-  * Override application components with fake implementation ([stub or mock](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices))
+    * Hint: Separate standard unit tests from integration tests with TestCategoryAttribute,
+      or by placing them in a separate project.
+      This will allow developer to execute fast standard tests more often and slow
+      integration test only when need (nightly build, e.g.).
+  * Override application components with fake implementation
+    ([stub or mock](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices))
     to simplify unit tests: BookTest.OverrideSystemComponentsForTesting.
-  * Test parallel requests when there is a possibility of concurrency issues, such as deadlock, unique constraint validations and similar: BookTest.ParallelCodeGeneration.
-    * This test also show how to handle (rare) cases when we need to commit database transaction unit test.
+  * Test parallel requests when there is a possibility of concurrency issues, such as deadlock,
+    unique constraint validations and similar: BookTest.ParallelCodeGeneration.
+    * This test also shows how to handle (rare) cases when we need to commit database transaction unit test.
   * Test row permissions with fake user: RowPermisionsTest.DocumentRowPermissions.
 
 ## Implementing business logic in a separate library
@@ -102,8 +111,11 @@ Contents:
 * The custom class can be implemented directly in Rhetos application (Rhetos v4 and later). The main benefit for
   writing custom code in a separate class instead of in DSL script is that C# IntelliSense is available.
   IntelliSense even includes the generated code, such as repository classes and Entity Framework model.
-  For example see [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/rhetos-4/src/Bookstore.Service/DslScripts/BookRating.rhe) (v4)
-  in DSL script, class RatingSystem that implements the feature, and unit test RatingSystemTest.
+  For example see [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/BookRating.rhe)
+  in DSL script, class [RatingSystem](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/Rating/RatingSystem.cs)
+  that implements the feature, and unit test
+  [RatingSystemTest](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.Service.Test/RatingSystemTest.cs)
+  that tests the feature directly without using a database.
 * Alternatively, the custom class can be implemented in an external library, with one of the following
   design options to prevent circular dependency between the Rhetos application's code and the external library:
   * A) External library does not reference the generated code from the Rhetos application (e.g. the repository classes).
