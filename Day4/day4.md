@@ -229,7 +229,8 @@ If you run the app now and navigate to `http://localhost:5000/Demo/Login`
 and then to `http://localhost:5000/Demo/ReadBooks`, you will receive an error:
 `UserException: Your account 'SampleUser' is not registered in the system. Please contact the system administrator.`
 
-Since "SampleUser" doesn't exist in Rhetos we will use a simple configuration feature to treat him as admin.
+Since "SampleUser" doesn't exist in Rhetos we will use a simple configuration feature
+allow full access for the user.
 
 Add to `appsettings.json`:
 
