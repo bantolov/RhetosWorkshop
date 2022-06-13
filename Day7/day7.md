@@ -3,7 +3,7 @@
 Topics:
 
 1. [Unit testing](#unit-testing)
-2. [Implementing business logic in a separate library](#implementing-business-logic-in-a-separate-library)
+2. [Implementing business logic in a separate class or library](#implementing-business-logic-in-a-separate-class-or-library)
 3. [Temporal data and change history](#temporal-data-and-change-history)
 4. [Reporting](#reporting)
 5. [Full-text search](#full-text-search)
@@ -106,25 +106,38 @@ Contents:
     * This test also shows how to handle (rare) cases when we need to commit database transaction unit test.
   * Test **row permissions** with fake user: RowPermisionsTest.DocumentRowPermissions.
 
-## Implementing business logic in a separate library
+## Implementing business logic in a separate class or library
 
 Documentation:
 
-* Chapter "Using external code when developing actions" in article
-  [Action concept](https://github.com/Rhetos/Rhetos/wiki/Action-concept#Using-external-code-when-developing-actions).
+* Chapters "How to use another class from an Action" in article
+  [Action concept](https://github.com/Rhetos/Rhetos/wiki/Action-concept#how-to-use-another-class-from-an-action-without-dependency-injection).
+  The same principles apply to any other concept with a C# code snippet,
+  for example ComposableFilterBy or RowPermissions.
 
 Contents:
 
 * Instead of implementing large blocks of C# code in DSL script (in Action or ComposableFilterBy, e.g.),
-  you can simply call some method implemented in a custom class.
+  you can call some method implemented in a custom class.
 * The custom class can be implemented directly in Rhetos application (Rhetos v4 and later). The main benefit for
   writing custom code in a separate class instead of in DSL script is that C# IntelliSense is available.
   IntelliSense even includes the generated code, such as repository classes and Entity Framework model.
-  For example see [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/BookRating.rhe)
-  in DSL script, class [RatingSystem](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/Rating/RatingSystem.cs)
-  that implements the feature, and unit test
-  [RatingSystemTest](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.Service.Test/RatingSystemTest.cs)
-  that tests the feature directly without using a database.
+  For example see:
+  * [ComputeBookRating](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/BookRating.rhe)
+    in DSL script,
+  * class [RatingSystem](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/Rating/RatingSystem.cs)
+    that implements the feature,
+  * and unit test
+    [RatingSystemTest](https://github.com/Rhetos/Bookstore/blob/master/test/Bookstore.Service.Test/RatingSystemTest.cs)
+    that tests the feature directly without using a database.
+* Dependency injection
+  * When a feature is implemented in a static method, it can be called directly from a DSL script (see examples above).
+    When the feature implementation requires components from the application's dependency injection container,
+    such as configuration, database connection and similar, then the custom class that implements
+    the feature should also be registered to the DI container.
+  * Read [How to use another class from an Action, with dependency injection](https://github.com/Rhetos/Rhetos/wiki/Action-concept#how-to-use-another-class-from-an-action-with-dependency-injection)
+    and review linked examples.
+  * Read [RepositoryUses](https://github.com/Rhetos/Rhetos/wiki/Low-level-object-model-concepts#repositoryuses)
 * Alternatively, the custom class can be implemented in an external library, with one of the following
   design options to prevent circular dependency between the Rhetos application's code and the external library:
   * A) External library does not reference the generated code from the Rhetos application (e.g. the repository classes).
