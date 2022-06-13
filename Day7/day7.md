@@ -33,21 +33,30 @@ Contents:
     on VS unit testing framework.
   * We will use same technology as "playground" console application from
     [Using the Domain Object Model](https://github.com/Rhetos/Rhetos/wiki/Using-the-Domain-Object-Model).
+* Unit test project
   * **Demonstrate** adding a new unit testing project in Bookstore application.
-    See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
-    for code structure and references.
+    * Add a unit test project Bookstore.Services.Test to the Bookstore solution
+      (MSTest to use old Rhetos helpers, or XUnit for newer test framework).
+    * On the project add a project reference to Bookstore.Service. No need to add Rhetos NuGet packages.
+    * Rhetos.TestCommon NuGet package contains some optional helpers for MSTest test projects.
+    * See [test/Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test)
+      for code structure and references.
+  * Unit tests should reuse a single static instance of `RhetosHost`, to avoid running
+    slow initialization code for each test (Entity Framework startup and plugins discovery).
+    * **Develop** a helper class `TestScope` that initializes `RhetosHost` and use it in unit tests.
+      For example, see [TestScope class](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test/Tools/TestScope.cs)),
+      and its usage the Bookstore test [CommonMisspellingValidation](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L58).
+    * RhetosHost will automatically load the references application's runtime configuration,
+      such as **database connection** and similar settings, so there is no need to add any
+      more dependencies or config files to the test project.
+* Typical unit test:
   * **Demonstrate** writing a simple unit test: add a book and two comments,
-    expect the cache entity value BookInfo.NumberOfComments to be 2.
-* Rhetos.ProcessContainer
-  * Unit tests should reuse a single static instance of `ProcessContainer`, to avoid running
-    initialization code for each test (Entity Framework startup and plugin discovery).
-  * **Develop** a helper class that initializes `ProcessContainer`
-    (for example [TestScope](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test/Tools/TestScope.cs))
-    and use it in unit tests.
-    See TestScope usage in the Bookstore test
-    [CommonMisspellingValidation](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L58).
-  * Each TransactionScopeContainer instance represents a separate atomic database transaction
+    expect the cache entity value BookInfo.NumberOfComments to be 2:
+    [AutomaticallyUpdateNumberOfComments](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L23)
+  * Note that each scope instance represents a separate atomic database transaction
     (similar to a single web request).
+    All operations executed within the a single scope will be committed together or rolled back
+    at the and of the scope.
 * Rhetos.TestCommon.TestUtility class best practices
   * Use TestUtility.Dump and TestUtility.DumpSorted to format your expected result,
     and compare expected report vs. actual report.
@@ -60,13 +69,13 @@ Contents:
     (for example, the attribute could report false positive if the correct exception
     was thrown, but on the wrong line in test).
 * Principles for writing maintainable unit tests (independence)
-  * Test should prepare its own test data.
-    It should be able to run on empty database, after deploying the application
-    (it will include data created by data-migration scripts and similar features).
-  * Test should not be affected by the existing data in database.
-    It should be able to run on an existing database from the shared test environment.
-  * Test should not change the existing data or leave new data in the database
-    (rollback by default, or custom cleanup in specific circumstances).
+  1. Test should prepare its own test data.
+     It should be able to run on empty database, after deploying the application
+     (it will include data created by data-migration scripts and similar features).
+  2. Test should not be affected by the existing data in database.
+     It should be able to run on an existing database from the shared test environment.
+  3. Test should not change the existing data or leave new data in the database
+     (rollback by default, or custom cleanup in specific circumstances).
 * Testing user permissions
   * IUserInfo mock
   * Directly execute filters for read and write row permissions
@@ -75,13 +84,13 @@ Contents:
     It is usually better to directly test row permissions filters, because that
     provides a smaller scope for what is tested.
 * Review examples in [Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test) demo:
-  * A typical integration test: Test automatic updates of computed data that uses database view:
+  * A typical **integration** test: Test automatic updates of computed data that uses database view:
     BookTest.AutomaticallyUpdateNumberOfComments.
-  * Test data validation that should throw an error in insert:
+  * Test data validation that should throw an **exception** in insert:
     BookTest.CommonMisspellingValidation.
-  * Test a filer without using the database (standard unit test, not an integrations test):
+  * Test a filer without using the database (**clean unit test**, not an integrations test):
     BookTest.CommonMisspellingValidation_DirectFilter.
-  * Standard unit tests for a more complex data processing:
+  * Standard unit tests for a more **complex data processing**:
     RatingSystemTest.SimpleRatings.
     * Hint: Create string 'report' when testing for multiple values in a list.
       This will provide a simple and complete overview of actual and expected data in case the test fails.
@@ -89,13 +98,13 @@ Contents:
       or by placing them in a separate project.
       This will allow developer to execute fast standard tests more often and slow
       integration test only when need (nightly build, e.g.).
-  * Override application components with fake implementation
+  * Override application components with **fake** implementation
     ([stub or mock](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices))
     to simplify unit tests: BookTest.OverrideSystemComponentsForTesting.
-  * Test parallel requests when there is a possibility of concurrency issues, such as deadlock,
+  * Test **parallel requests** when there is a possibility of concurrency issues, such as deadlock,
     unique constraint validations and similar: BookTest.ParallelCodeGeneration.
     * This test also shows how to handle (rare) cases when we need to commit database transaction unit test.
-  * Test row permissions with fake user: RowPermisionsTest.DocumentRowPermissions.
+  * Test **row permissions** with fake user: RowPermisionsTest.DocumentRowPermissions.
 
 ## Implementing business logic in a separate library
 
