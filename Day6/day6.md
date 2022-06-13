@@ -73,7 +73,8 @@ Contents:
 * Debugging
   * We can use Visual Studio debugger on the generated application as any other .NET web application.
 * Example
-  * **Demonstrate** the step-by-step debugging instructions.
+  * **Demonstrate** the step-by-step debugging instructions in
+    [Debugging applications built with Rhetos CLI and Rhetos MSBuild integration](https://github.com/Rhetos/Rhetos/wiki/Debugging#debugging-applications-built-with-rhetos-cli-and-rhetos-msbuild-integration)
 * Tips and Tricks
 
 Assignment:

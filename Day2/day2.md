@@ -130,7 +130,7 @@ Documentation:
 Contents:
 
 * Understanding the generated object model
-  * Review the generated C# application source code in `obj\Rhetos\RhetosSource`.
+  * Review the generated C# application source code in `obj\Rhetos\Source`.
   * Simple class (POCO).
   * Queryable class (inherits simple, adds navigation properties for EF LINQ).
   * Repository class with methods that implement business rules and data access.
