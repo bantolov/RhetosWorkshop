@@ -153,7 +153,7 @@ Contents:
   * Large database transactions (/ShortTransactions)
   * Incorrect drop-script for an SqlObject.
     See [Fixing an incorrect removal script](https://github.com/Rhetos/Rhetos/wiki/SqlObject-concept#troubleshooting-fixing-an-incorrect-removal-script).
-* Older applications use DeployPackages instead of Rhetos CLI:
+* Older Rhetos apps use DeployPackages instead of Rhetos CLI:
   * DeployPackages.exe is similar to running:
     * nuget.exe restore
     * rhetos.exe build
@@ -167,3 +167,23 @@ Assignment:
 
 * Publish your Bookstore.Service application on a test environment,
   on a new empty database.
+
+Assignment notes and instructions:
+
+1. The test and production environments are normally placed on a shared server,
+   but in this assignment, create a new application instance on your development machine:
+   Create a new folder *Bookstore2* for your new application instance.
+2. You could simply copy the files from bin folder into *Bookstore2*.
+   A better approach is to use *publish* feature instead:
+   In Visual Studio right-click the Bookstore.Service project and select "Publish...",
+   select target "Folder" then click "Publish".
+   The application files are generated in folder `Bookstore.Service\bin\Release\net6.0\publish`.
+   You can copy the files from that folder into *Bookstore2*.
+3. Create a new empty database Bookstore2.
+4. Edit the database connection string in Bookstore2 to reference the new database.
+   It is probably located in appsetting.json, or similar.
+5. Updated the Bookstore2 database:
+   Open command prompt in Bookstore2, and execute `rhetos.exe dbupdate Bookstore.Service.dll`.
+6. Test the application by running Bookstore.Service.exe in Bookstore2 folder.
+   * Use the following command-line argument to simulate the development environment with Swagger enabled:
+     `Bookstore.Service.exe --environment Development`
