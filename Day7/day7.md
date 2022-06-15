@@ -12,7 +12,7 @@ Topics:
 
 ## Unit testing
 
-Principles and techniques for developing unit tests on Rhetos applications
+Principles and techniques for developing unit tests on Rhetos apps
 with Visual Studio Unit Testing Framework.
 
 Documentation:
@@ -142,7 +142,7 @@ Contents:
   design options to prevent circular dependency between the Rhetos application's code and the external library:
   * A) External library does not reference the generated code from the Rhetos application (e.g. the repository classes).
     This is a common solution for generic algorithms implementation.
-    C# code in DSL scripts and Rhetos application can directly reference the generated library (old Rhetos applications
+    C# code in DSL scripts and Rhetos application can directly reference the generated library (old Rhetos apps
     with DeployPackages need to use ExternalReference concept).
     The external library may provided interfaces that can be implemented by entities and other
     data sources in DSL scripts, to simplify reading and writing data without directly referencing the generated code
@@ -162,7 +162,7 @@ Documentation:
 
 Documentation:
 
-* TODO: Overview of reporting approaches on Rhetos applications (issue #315)
+* TODO: Overview of reporting approaches on Rhetos apps (issue #315)
 * Basic concepts: ReportData and ReportFile
   * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.TestApp/DslScripts/Computations.rhe)
 * TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.

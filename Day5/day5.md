@@ -103,7 +103,7 @@ Assignment:
 
 ## Business process modeling
 
-Best practices for implementing business processes in Rhetos applications.
+Best practices for implementing business processes in Rhetos apps.
 
 Documentation:
 

@@ -77,7 +77,7 @@ Contents:
   and new custom generated files could be added (for example, generating [TypeScript classes](https://github.com/Rhetos/FloydExtensions)
   for all entities).
 * Testing & debugging custom DSL concepts.
-* New concepts library can be released as a NuGet packages to be reused in other Rhetos applications.
+* New concepts library can be released as a NuGet packages to be reused in other Rhetos apps.
   The NuGet package can also contain DSL scripts, data-migration scripts, and other files.
   See <https://github.com/Rhetos/Rhetos/wiki/Creating-a-Rhetos-package>.
 

@@ -105,7 +105,7 @@ such as filters, validations, computations and server actions.
 
 Prerequisites:
 
-* For this workshop, and development of Rhetos applications in general,
+* For this workshop, and development of Rhetos apps in general,
   it is important to understand basics of C# LINQ and how
   Entity Framework works with the LINQ queries,
   because many features such as filters and data processing will be

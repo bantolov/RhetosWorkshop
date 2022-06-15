@@ -5,7 +5,7 @@ Topics:
 1. [Migrating the application data when changing the database structure](#migrating-the-application-data-when-changing-the-database-structure)
 2. [Debugging](#debugging)
 3. [System Logging (NLog)](#system-logging-nlog)
-4. [Deploying Rhetos applications](#deploying-rhetos-applications)
+4. [Deploying Rhetos apps](#deploying-rhetos-apps)
 
 ## Migrating the application data when changing the database structure
 
@@ -113,7 +113,7 @@ Assignment:
 
 * Read the article <https://github.com/Rhetos/Rhetos/wiki/Logging>
 
-## Deploying Rhetos applications
+## Deploying Rhetos apps
 
 Best practices for deployment process on development, test and production environments.
 Additional features of Rhetos CLI utility.
@@ -123,7 +123,7 @@ Documentation:
 * [Publishing the application to a test environment or production](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup#publishing-the-application-to-a-test-environment-or-production)
 * [Rhetos CLI](https://github.com/Rhetos/Rhetos/wiki/Rhetos-CLI)
 * [Bookstore build script example](https://github.com/Rhetos/Bookstore/blob/master/Build.ps1)
-* TODO: Tutorial on "Deploying Rhetos applications" (issue #313), based on contents below.
+* TODO: Tutorial on "Deploying Rhetos apps" (issue #313), based on contents below.
 
 Contents:
 

@@ -97,7 +97,7 @@ Comprehension review:
    * Database structure independence *(theory)*
 2. Debugging
 3. System Logging - NLog
-4. Deploying Rhetos applications
+4. Deploying Rhetos apps
 
 ## [Day 7](Day7/day7.md)
 
