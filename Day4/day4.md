@@ -211,6 +211,7 @@ and a new method to allow us to sign-in:
 
 ```cs
 [HttpGet]
+[AllowAnonymous]
 public async Task Login()
 {
     var claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, "SampleUser") }, CookieAuthenticationDefaults.AuthenticationScheme);
