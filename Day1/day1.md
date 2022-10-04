@@ -98,6 +98,7 @@ Contents:
     * Use NLog to write application's system log into a file - Skip
     * Adding localization - Skip
     * Improve Entity Framework performance - Skip
+  * Use environment-specific configuration file - Read
   * Publishing the application to a test environment or production - Read
   * A more complex project structure - Skip
 
