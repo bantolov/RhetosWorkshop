@@ -94,13 +94,16 @@ Documentation:
 Contents:
 
 * Configuring the integrated logging
-  * Review the `nlog` section in web.config:
+  * **Demonstrate** logging with NLog:
+    Follow the instructions in section 
+    [Use NLog to write application's system log into a file](https://github.com/Rhetos/Rhetos/wiki/Recommended-application-setup#use-nlog-to-write-applications-system-log-into-a-file).
+    Review the nlog configuration file:
     * Targets: log files, Azure Application Insights, other NLog plugins.
-    * Rules
+    * Rules:
       * Level: Error, Info (warnings), Trace (debugging)
       * Filters by name.
   * **Demonstrate** trace log:
-    * Uncomment `<logger name="*" minLevel="Trace" writeTo="TraceLog" />` in web.config.
+    * Uncomment `<logger name="*" minLevel="Trace" writeTo="TraceLog" />` in nlog configuration.
     * Execute any valid REST request and review RhetosServerTrace.log.
     * Note that you should enable TraceLog in production only for a short period of time,
       because of performance and storage overhead.
