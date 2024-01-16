@@ -63,12 +63,6 @@ Contents:
   Feel free to include the error message or exception call stack in the question,
   after removing any personal data.
 
-Assignment:
-
-1. Create an account at `rhetos-dev` Slack team (<https://rhetos-dev.slack.com/signup>)
-   and join the channel `#workshop` (English) or `#radionica` (Croatian),
-   where we can discuss daily issues and answer questions related to this workshop.
-
 ## Development environment setup and the first application
 
 Step-by-step development of a "hello world" application on the Rhetos platform.
