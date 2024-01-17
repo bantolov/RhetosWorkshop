@@ -164,7 +164,7 @@ Documentation:
 
 * TODO: Overview of reporting approaches on Rhetos apps (issue #315)
 * Basic concepts: ReportData and ReportFile
-  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.TestApp/DslScripts/Computations.rhe)
+  * Examples in unit tests [Computations.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/Computations.rhe)
 * TODO: TemplaterReport package is not published on GitHub yet, it requires a paid license.
 
 ## Full-text search
@@ -174,10 +174,10 @@ Documentation:
 * [SqlObject](https://github.com/Rhetos/Rhetos/wiki/SqlObject-concept),
   for creating full-text search catalog and index
   * Example in unit test
-    [FullTextSearchTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/CommonConcepts.TestApp/DslScripts/FullTextSearchTest.rhe)
+    [FullTextSearchTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/FullTextSearchTest.rhe)
   * FTS objects cannot be created in a database transaction.
 * Rhetos contains EF LINQ extension methods for FullTextSearch
-  * See [DatabaseExtensionFunctions.cs](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts.Interfaces/DatabaseExtensionFunctions.cs)
+  * See [DatabaseExtensionFunctions.cs](https://github.com/Rhetos/Rhetos/blob/master/src/Rhetos.MsSqlEf6/CommonConcepts/DatabaseExtensionFunctions.cs)
   * Alternative integer key instead of GUID ID.
   * Limiting the search subquery results with top_n_by_rank.
 * TODO: "Full-text search" tutorial (issue #316)

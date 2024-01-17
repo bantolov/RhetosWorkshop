@@ -71,8 +71,8 @@ Contents:
   * **Demonstrate** development of new concept "LastModifiedTime" with code generator on the
     example from the previous workshop topic "Low-level object model concepts".
     The new concept is similar to the existing concept CreationTime,
-    see [concept syntax definition](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dsl.DefaultConcepts/SimpleBusinessLogic/CreationTimeInfo.cs)
-    and [code generator](https://github.com/Rhetos/Rhetos/blob/master/CommonConcepts/Plugins/Rhetos.Dom.DefaultConcepts/SimpleBusinessLogic/CreationTimeCodeGenerator.cs).
+    see [concept syntax definition](https://github.com/Rhetos/Rhetos/blob/master/src/Rhetos.CommonConcepts/Dsl.DefaultConcepts/SimpleBusinessLogic/CreationTimeInfo.cs)
+    and [code generator](https://github.com/Rhetos/Rhetos/blob/master/src/Rhetos.CommonConcepts/Dom.DefaultConcepts/SimpleBusinessLogic/CreationTimeCodeGenerator.cs).
 * There are other code generators available (Database, REST web API, MVC client model, ...),
   and new custom generated files could be added (for example, generating [TypeScript classes](https://github.com/Rhetos/FloydExtensions)
   for all entities).
