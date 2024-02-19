@@ -103,6 +103,8 @@ Contents:
 * Macro concepts
   * **Demonstrate** development of new macro concept "CodeTable" that can be applied to an entity
     and generates: `ShortString Code { AutoCode; }` and `ShortString Name { Required; }`.
+  * For implementation, see Bookstore examples [CodeTable.cs](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.RhetosExtensions/CodeTable.cs)
+    and [CodeTable.rhe](https://github.com/Rhetos/Bookstore/blob/master/src/Bookstore.Service/DslScripts/AdditionalExamples/CodeTable.rhe).
 * Macro concept that inherits EntityInfo
   * **Demonstrate** on CodeTable.
   * Note that "inheritance" approach is not a best practice for this example,
