@@ -176,10 +176,10 @@ Contents:
   * How to compute data: Filters, SqlQueryable, Computed, ...
 * ComputedFrom concept
   * Source (ComputedFrom), mapping (AllProperties), updating (KeepSynchronized).
-  * **Demonstrate** ComputedFrom on SqlQueryable BookInfo with NumberOfComments,
+  * **Demonstrate** ComputedFrom on SqlQueryable BookInfo with NumberOfChapters,
     from <https://github.com/Rhetos/Rhetos/wiki/Read-only-data-structures#sqlqueryable-concept>.
     * Rename SqlQueryable to ComputeBookInfo.
-    * **Demonstrate** inserting comment in LINQPad without ChangesOn* concept.
+    * **Demonstrate** inserting a new chapter in LINQPad without ChangesOn* concept.
 * Automatically updating cached data
   * ChangesOnChangedItems
   * Helpers:

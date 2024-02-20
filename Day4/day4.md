@@ -296,7 +296,7 @@ Assignment:
    * Each book has an employee assigned to it.
    * Every employee can read all book records, but only the employee assigned to the book
      can edit that record in Book entity.
-   * Only the employee assigned to the book can edit the book's comments (see entity Comment).
+   * Only the employee assigned to the book can edit the book's chapters (see entity Chapter).
 
 Assignment notes and common issues:
 
@@ -365,16 +365,16 @@ Entity Book
     }
 }
 
-Entity Comment
+Entity Chapter
 {
-    LongString Text;
+    LongString Heading;
     Reference Book { Detail; }
 
     RowPermissions
     {
         AllowRead EveryoneCanRead 'context =>
             {
-                return comment => comment.Book.AssignedTo.ID != null;
+                return chapter => chapter.Book.AssignedTo.ID != null;
             }';
 
         Allow OwnerCanWrite 'context =>
@@ -385,11 +385,11 @@ Entity Comment
                     .Select(e => e.ID)
                     .SingleOrDefault();
 
-                return comment => comment.Book.AssignedTo.ID == employeeId;
+                return chapter => chapter.Book.AssignedTo.ID == employeeId;
             }';
 
         // Better:
-        InheritFrom Bookstore.Comment.Book;
+        InheritFrom Bookstore.Chapter.Book;
     }
 }
 

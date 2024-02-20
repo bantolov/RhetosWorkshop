@@ -50,9 +50,9 @@ Contents:
       such as **database connection** and similar settings, so there is no need to add any
       more dependencies or config files to the test project.
 * Typical unit test:
-  * **Demonstrate** writing a simple unit test: add a book and two comments,
-    expect the cache entity value BookInfo.NumberOfComments to be 2:
-    [AutomaticallyUpdateNumberOfComments](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L23)
+  * **Demonstrate** writing a simple unit test: add a book and two chapters,
+    expect the cache entity value BookInfo.NumberOfChapters to be 2:
+    [AutomaticallyUpdateNumberOfChapters](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L23)
   * Note that each scope instance represents a separate atomic database transaction
     (similar to a single web request).
     All operations executed within the a single scope will be committed together or rolled back
@@ -85,7 +85,7 @@ Contents:
     provides a smaller scope for what is tested.
 * Review examples in [Bookstore.Service.Test](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test) demo:
   * A typical **integration** test: Test automatic updates of computed data that uses database view:
-    BookTest.AutomaticallyUpdateNumberOfComments.
+    BookTest.AutomaticallyUpdateNumberOfChapters.
   * Test data validation that should throw an **exception** in insert:
     BookTest.CommonMisspellingValidation.
   * Test a filer without using the database (**clean unit test**, not an integrations test):
