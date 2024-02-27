@@ -45,14 +45,14 @@ Contents:
     slow initialization code for each test (Entity Framework startup and plugins discovery).
     * **Develop** a helper class `TestScope` that initializes `RhetosHost` and use it in unit tests.
       For example, see [TestScope class](https://github.com/Rhetos/Bookstore/tree/master/test/Bookstore.Service.Test/Tools/TestScope.cs)),
-      and its usage the Bookstore test [CommonMisspellingValidation](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L58).
+      and its usage the Bookstore test [CommonMisspellingValidation](https://github.com/Rhetos/Bookstore/blob/e4b1226763ebfe0638ce8f384879ea92d0808bff/test/Bookstore.Service.Test/BookTest.cs#L58).
     * RhetosHost will automatically load the references application's runtime configuration,
       such as **database connection** and similar settings, so there is no need to add any
       more dependencies or config files to the test project.
 * Typical unit test:
   * **Demonstrate** writing a simple unit test: add a book and two chapters,
     expect the cache entity value BookInfo.NumberOfChapters to be 2:
-    [AutomaticallyUpdateNumberOfChapters](https://github.com/Rhetos/Bookstore/blob/e0e6e555396cd68ad4cea7d7838e78b4c6fa1c90/test/Bookstore.Service.Test/BookTest.cs#L23)
+    [AutomaticallyUpdateNumberOfChapters](https://github.com/Rhetos/Bookstore/blob/e4b1226763ebfe0638ce8f384879ea92d0808bff/test/Bookstore.Service.Test/BookTest.cs#L23)
   * Note that each scope instance represents a separate atomic database transaction
     (similar to a single web request).
     All operations executed within the a single scope will be committed together or rolled back
