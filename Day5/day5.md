@@ -74,8 +74,8 @@ because it correlates well with principles and goals of Rhetos platform.
 
 Documentation:
 
-* [Greg Young - CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs)
 * <https://martinfowler.com/eaaDev/EventSourcing.html>
+* [Greg Young - CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs)
 
 Contents:
 
