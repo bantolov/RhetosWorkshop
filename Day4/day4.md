@@ -63,7 +63,7 @@ Contents:
 * **Demonstrate** adding a new Visual Studio project for implementing custom DSL concepts:
   * In the same solution with the existing Rhetos application (Bookstore.Service),
     add a "Class Library" C# project, named "Bookstore.RhetosExtensions" located in "src" subfolder,
-    with .NET 6 framework.
+    with .NET 8 framework.
   * In the Bookstore.Service application add a *project reference* to the Bookstore.RhetosExtensions project,
     in order to use the custom concepts during build.
   * Add "Rhetos.CommonConcepts" NuGet package to the Bookstore.RhetosExtensions project.

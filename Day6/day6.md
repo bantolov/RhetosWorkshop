@@ -180,11 +180,11 @@ Assignment notes and instructions:
    A better approach is to use *publish* feature instead:
    In Visual Studio right-click the Bookstore.Service project and select "Publish...",
    select target "Folder" then click "Publish".
-   The application files are generated in folder `Bookstore.Service\bin\Release\net6.0\publish`.
+   The application files are generated in folder `Bookstore.Service\bin\Release\net8.0\publish`.
    You can copy the files from that folder into *Bookstore2*.
 3. Create a new empty database Bookstore2.
 4. Edit the database connection string in Bookstore2 to reference the new database.
-   It is probably located in appsetting.json, or similar.
+   It is probably located in appsettings.json, or similar.
 5. Updated the Bookstore2 database:
    Open command prompt in Bookstore2, and execute `rhetos.exe dbupdate Bookstore.Service.dll`.
 6. Test the application by running Bookstore.Service.exe in Bookstore2 folder.
